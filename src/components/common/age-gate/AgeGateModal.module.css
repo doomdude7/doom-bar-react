@@ -1,0 +1,79 @@
+/* pop-up  */
+.pop-up {
+  /* opacity: 0; */
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  cursor: default;
+}
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #0d060f;
+  opacity: 1;
+}
+.age-gate-container {
+  display: flex;
+  width: 50vw;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+  background-color: #110814c5;
+  border-radius: 5rem;
+}
+.age-gate-text-container {
+  text-align: center;
+}
+.age-gate-question-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 45vw;
+  align-items: center;
+  justify-content: center;
+}
+.age-gate-svg {
+  margin-bottom: 5rem;
+  transform: scale(6);
+  fill: rgba(245, 245, 245, 0.76);
+}
+.age-gate-container p {
+  font-size: 2rem;
+  color: white;
+  -webkit-text-stroke: 0.5px black;
+  text-shadow: 2px 2px 2px black;
+}
+.age-gate-container h2 {
+  color: white;
+  font-size: 2.5rem;
+  /* text-shadow: none; */
+}
+.age-gate-container button {
+  width: 8rem;
+  margin: 0.5rem 0.2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+#age-gate-btn-yes {
+  background-color: rgb(162, 202, 101);
+  cursor: pointer;
+}
+#age-gate-btn-no {
+  background-color: rgb(211, 95, 95);
+  cursor: pointer;
+}

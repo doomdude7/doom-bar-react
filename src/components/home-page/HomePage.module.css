@@ -1,0 +1,55 @@
+/* greeting section */
+.greeting {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  align-items: center;
+  background: linear-gradient(0deg, #1c1c1c, #202020, #3a1845);
+}
+
+.greeting img {
+  border-radius: 10rem;
+  border: 3px solid black;
+  object-fit: cover;
+  height: 80vh;
+  width: 50vw;
+  opacity: 0.7;
+  /* z-index: -1; */
+}
+.greeting-text-container {
+  text-align: center;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.greeting-title {
+  color: whitesmoke;
+  -webkit-text-stroke: 1px whitesmoke;
+  text-shadow: 2px 2px 2px #893ca3, 3px 3px 3px #3a1845, 10px 10px 10px black;
+  font-size: 4.5rem;
+}
+.greeting-subtitle {
+  color: white;
+  -webkit-text-stroke: 0.5px #893ca3;
+  text-shadow: 2px 2px 2px #893ca3, 3px 3px 3px #3a1845, 10px 10px 10px black;
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-decoration-style: double;
+
+  margin: 1rem 0rem;
+  font-size: 2.6rem;
+}
+.greeting-msg {
+  -webkit-text-stroke: 0.2px black;
+  color: whitesmoke;
+  font-size: 1.6rem;
+  text-shadow: 3px 3px 3px #3a1845, 10px 10px 10px black;
+}
+
+/* landing page  */
+.landing-page {
+  background-image: url(./assets/doom-bar.jpg);
+  background-size: cover;
+  background-position: center;
+}

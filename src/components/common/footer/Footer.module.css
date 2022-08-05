@@ -1,0 +1,44 @@
+/* footer section  */
+footer {
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  bottom: 0;
+  height: 8vh;
+  width: 100vw;
+  padding: 0rem 2rem;
+  overflow: hidden;
+  z-index: 10;
+  flex: 1;
+  background-color: rgba(58, 24, 69, 0.1);
+
+  text-decoration: underline;
+  font-size: 1.5rem;
+  color: whitesmoke;
+}
+footer nav {
+  display: flex;
+  width: 20vw;
+  flex: 5;
+  justify-content: space-evenly;
+  align-items: center;
+}
+footer nav a {
+  text-shadow: 3px 3px 3px #3a1845;
+  font-size: 1rem;
+  text-decoration: none;
+  color: whitesmoke;
+}
+footer h2 {
+  text-shadow: 3px 3px 3px #3a1845;
+  font-size: 1.5rem;
+  color: whitesmoke;
+}
+footer img {
+  width: 10vw;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+}
