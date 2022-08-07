@@ -3,7 +3,7 @@ import styles from "./HomePage.module.css";
 import globalStyles from "../../App.module.css";
 export const HomePage = () => {
   return (
-    <main>
+    <>
       <section
         id="landing-page"
         className={`${styles["landing-page"]} ${globalStyles["content"]}`}
@@ -24,6 +24,6 @@ export const HomePage = () => {
           </p>
         </div>
       </section>
-    </main>
+    </>
   );
 };

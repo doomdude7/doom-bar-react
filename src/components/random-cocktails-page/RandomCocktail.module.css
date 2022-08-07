@@ -1,0 +1,24 @@
+.random-cocktail {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* width: 15vw; */
+}
+.random-cocktail-img {
+  border-radius: 1rem;
+  border: 3px solid black;
+  margin: 0rem 1rem;
+  width: 15vw;
+  z-index: 3;
+}
+.random-cocktail-title,
+.random-cocktail-category {
+  color: white;
+  text-align: center;
+}
+.random-cocktail-title {
+  margin: 1rem 0rem;
+}
+.random-cocktail-category {
+  margin: 0.2em 0rem;
+}

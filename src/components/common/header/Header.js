@@ -1,29 +1,27 @@
 import styles from "./Header.module.css";
-
+import { Link } from "react-router-dom";
 export const Header = () => {
   return (
     <header>
-      <a href="#landing-page">
+      <Link to="/">
         <h2 className="logo">Doom's Bar</h2>
-      </a>
+      </Link>
       <nav>
-        <a href="./cocktail-page.html">
+        <Link to="/random-cocktails">
           <h3>Random drinks</h3>
-        </a>
-        <a href="./ingredients-page.html">
+        </Link>
+        <Link to="/">
           <h3>Pick a drink</h3>
-        </a>
-        <a href="./under-construction.html">
+        </Link>
+        <Link to="/">
           <h3>Latest drinks</h3>
-        </a>
+        </Link>
       </nav>
       <div className="auth-buttons-container">
-        {/* prettier-ignore */}
-        <button id="cursor-trigger-btn" className={`${styles['auth-button']}`}>
+        <button id="cursor-trigger-btn" className={`${styles["auth-button"]}`}>
           Login
         </button>
-        {/* prettier-ignore */}
-        <button id="cursor-trigger-btn" className={`${styles['auth-button']}`}>
+        <button id="cursor-trigger-btn" className={`${styles["auth-button"]}`}>
           Register
         </button>
       </div>
