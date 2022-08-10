@@ -7,6 +7,6 @@ export const getOneRandom = async () => {
     headers: { Accept: "application/json" },
   });
   const data = await response.json();
-  console.log("data is", data);
+  // console.log("data is", data);
   return data.drinks[0];
 };

@@ -1,0 +1,119 @@
+/* cocktail details page //  */
+.cocktail-details-page {
+  width: 100vw;
+  height: 150vh;
+  position: absolute;
+  display: flex;
+  top: 8vh;
+  background-color: #202020fa;
+  z-index: 30;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cocktail-details {
+  text-align: center;
+  transform: translateY(-180%);
+  z-index: 2;
+}
+.close-cocktail-details {
+  position: absolute;
+  top: 30vh;
+  left: 1vw;
+  width: 4rem;
+  height: 3rem;
+  background-color: #893ca3;
+  color: white;
+  border-radius: 0.5rem;
+  z-index: 99;
+}
+.close-cocktail-details:hover {
+  width: 4.2rem;
+  height: 3.2rem;
+  border-color: whitesmoke;
+  border-style: double;
+  border-width: 0.5rem;
+  background-color: #411d4d;
+  color: aqua;
+}
+.cocktail-preview-and-instructions {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  transform: translateY(-50%);
+  background-color: #202020;
+  border-radius: 2rem;
+}
+/* .cocktail-details {
+  font-size: 2rem;
+} */
+.cocktail-instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 2rem;
+  height: 60vh;
+  width: 50vw;
+}
+.ingredients-list {
+  margin: 1rem 0rem;
+  font-size: 3rem;
+  color: #893ca3;
+}
+.ingredients-item {
+  margin: 0.5rem 0rem;
+  font-size: 1.5rem;
+  display: flex;
+  color: #893ca3;
+}
+.ingredients-item-sub,
+.ingredients-item-main {
+  display: flex;
+  margin: 0rem 0.4rem;
+}
+.instructions-p {
+  margin: 1rem 0rem;
+  font-size: 1.5rem;
+  color: #893ca3;
+  text-align: center;
+}
+.cocktail-instructions h2 {
+  color: #6b2c80;
+}
+.cocktails-details-category {
+  font-size: 2rem;
+  color: white;
+}
+.cocktails-details-title {
+  font-size: 3rem;
+  color: white;
+}
+.cocktails-details-alcoholic {
+  font-size: 1.5rem;
+  color: white;
+}
+.cocktail-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  width: 45vw;
+}
+.cocktail-preview-img {
+  opacity: 0x;
+  transform: scale(0.7);
+  border-radius: 5rem;
+  max-width: 50vw;
+}
+.glass-type {
+  color: #6b2c80;
+  background-color: #202020;
+  padding: 0rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  position: absolute;
+  bottom: 0vh;
+}

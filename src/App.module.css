@@ -13,7 +13,8 @@ body {
   overflow-x: hidden;
   background: linear-gradient(0deg, #3a1845, #404040);
 }
-a {
+a,
+button {
   cursor: inherit;
 }
 /* content - default size page*/
