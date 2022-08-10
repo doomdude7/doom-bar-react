@@ -226,6 +226,7 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
+
           <p className={`${styles["instructions-p"]}`}>
             Instructions: {`${cocktail.strInstructions}`}
           </p>

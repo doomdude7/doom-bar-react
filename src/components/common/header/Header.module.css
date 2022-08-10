@@ -44,7 +44,7 @@ header nav a {
   background-color: #893ca3;
 }
 nav a:hover {
-  /* font-size: 1.5rem; */
+  font-size: 2rem;
   -webkit-text-stroke: 0.5px #893ca3;
   text-shadow: 2px 2px 2px #893ca3, 3px 3px 3px #3a1845, 10px 10px 10px black;
   /* text-decoration: underline;
@@ -53,17 +53,19 @@ nav a:hover {
     text-underline-offset: 1rem; */
 }
 .logo:hover {
-  -webkit-text-stroke: 0.5px #893ca3;
+  -webkit-text-stroke: 0.5px #1d171f;
   text-shadow: 2px 2px 2px #893ca3, 3px 3px 3px #3a1845, 10px 10px 10px black;
   text-decoration: underline;
   text-decoration-style: double;
+  text-decoration-color: whitesmoke;
 }
 .auth-button {
   border: 3px solid #893ca3;
   padding: 0.5rem;
   margin: 0rem 0.2rem;
   color: #893ca3;
-  width: 5rem;
+  width: 5.5rem;
+  text-align: center;
   font-size: 0.8rem;
   font-weight: bold;
   border-radius: 2rem;
@@ -71,7 +73,10 @@ nav a:hover {
   cursor: inherit;
 }
 .auth-button:hover {
-  padding: 0.6rem;
+  padding: 1.2rem 0.6rem;
+  border-radius: 1rem;
+  text-shadow: 1px 1px 1px #893ca3, 2px 2px 2px #3a1845, 20px 10px 20px black;
+  font-size: 1rem;
   background-color: #3a1845;
   color: #e6e1e8;
   border: 3px solid #e6e1e8;
