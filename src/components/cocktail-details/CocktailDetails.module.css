@@ -22,10 +22,8 @@
   right: 10vw;
   width: 4rem;
   height: 3rem;
-  padding: 1rem 1/5rem;
   background-color: #893ca3;
   color: white;
-
   border-radius: 0.5rem;
   z-index: 99;
 }

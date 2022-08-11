@@ -43,18 +43,15 @@
   align-items: center;
   justify-content: center;
 }
-.age-gate-svg {
-  margin-bottom: 5rem;
-  transform: scale(6);
-  fill: rgba(245, 245, 245, 0.76);
-}
+
 .age-gate-container p {
   font-size: 2rem;
   color: white;
   -webkit-text-stroke: 0.5px black;
   text-shadow: 2px 2px 2px black;
 }
-.age-gate-container h2 {
+.age-gate-container h2,
+h1 {
   color: white;
   font-size: 2.5rem;
   /* text-shadow: none; */

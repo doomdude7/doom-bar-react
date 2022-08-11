@@ -6,11 +6,12 @@
 .cocktail-container {
   position: absolute;
   top: 20vh;
-  height: 95vh;
+  height: 115vh;
   width: 80vw;
   border-radius: 1.5rem;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-evenly;
   padding: 1rem;
 }
@@ -21,7 +22,6 @@
   height: 10vh;
   transform: translate(0%, 120%);
   width: 50vw;
-  align-items: center;
 }
 .cocktail-page-title {
   font-size: 3.8rem;

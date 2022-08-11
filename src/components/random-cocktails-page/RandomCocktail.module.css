@@ -3,13 +3,12 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  /* width: 15vw; */
 }
 .random-cocktail-img {
   border-radius: 1rem;
   border: 3px solid black;
   margin: 0rem 1rem;
-  width: 15vw;
+  width: 17vw;
   z-index: 3;
 }
 .random-cocktail-img:hover {
@@ -23,13 +22,13 @@
   text-align: center;
 }
 .random-cocktail-title {
-  margin: 1rem 0rem;
+  margin: 0.2rem 0rem;
   font-size: 2rem;
   -webkit-text-stroke: 0.5px black;
   text-shadow: 0.5px 0.5px 50px rgb(255, 255, 255), 1rem 1rem 0.5rem black;
 }
 .random-cocktail-category {
-  margin: 0.2em 0rem;
+  margin: 1rem 0rem;
 }
 .random-cocktail:hover .random-cocktail-title {
   color: aquamarine;

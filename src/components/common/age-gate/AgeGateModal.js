@@ -1,20 +1,20 @@
 import styles from "./AgeGateModal.module.css";
+import { useState } from "react";
 export const AgeGateModal = () => {
-  return (
+  const [isOpen, setIsOpen] = useState(true);
+  const ageGateTrueHandler = () => {
+    localStorage.setItem("ageConsent", "true");
+    setIsOpen(false);
+  };
+  const ageGateFalseHandler = () => {
+    window.location.href = "https://en.wikipedia.org/wiki/Legal_drinking_age";
+  };
+  return isOpen ? (
     <div className={`${styles["pop-up"]}`}>
       <div className={`${styles["overlay"]}`}></div>
       <div className={`${styles["age-gate-container"]}`}>
-        <svg
-          width="24px"
-          height="24px"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          data-name="Layer 1"
-          className="age-gate-svg"
-        >
-          <path d="M18,5h1V6a1,1,0,0,0,2,0V5h1a1,1,0,0,0,0-2H21V2a1,1,0,0,0-2,0V3H18a1,1,0,0,0,0,2ZM7,7V17a1,1,0,0,0,2,0V7A1,1,0,0,0,7,7ZM21.6,9a1,1,0,0,0-.78,1.18,9,9,0,1,1-7-7,1,1,0,1,0,.4-2A10.8,10.8,0,0,0,12,1,11,11,0,1,0,23,12a10.8,10.8,0,0,0-.22-2.2A1,1,0,0,0,21.6,9ZM11,9v1a3,3,0,0,0,.78,2A3,3,0,0,0,11,14v1a3,3,0,0,0,3,3h1a3,3,0,0,0,3-3V14a3,3,0,0,0-.78-2A3,3,0,0,0,18,10V9a3,3,0,0,0-3-3H14A3,3,0,0,0,11,9Zm5,6a1,1,0,0,1-1,1H14a1,1,0,0,1-1-1V14a1,1,0,0,1,1-1h1a1,1,0,0,1,1,1Zm0-6v1a1,1,0,0,1-1,1H14a1,1,0,0,1-1-1V9a1,1,0,0,1,1-1h1A1,1,0,0,1,16,9Z" />
-        </svg>
         <div className={`${styles["age-gate-text-container"]}`}>
+          <h1>Welcome to Doom's Bar!</h1>
           <p>
             Hello there dear traveller of the Internet. <br />
             You must be thirsty, let me crack open a cold one just for you!
@@ -25,11 +25,21 @@ export const AgeGateModal = () => {
         <div className={`${styles["age-gate-question-container"]}`}>
           <h2>Are you over 18 years old?</h2>
           <div className={`${styles["question-button-container"]}`}>
-            <button id={`${styles["age-gate-btn-yes"]}`}>Yes</button>
-            <button id={`${styles["age-gate-btn-no"]}`}>No</button>
+            <button
+              id={`${styles["age-gate-btn-yes"]}`}
+              onClick={ageGateTrueHandler}
+            >
+              Yes
+            </button>
+            <button
+              id={`${styles["age-gate-btn-no"]}`}
+              onClick={ageGateFalseHandler}
+            >
+              No
+            </button>
           </div>
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };
