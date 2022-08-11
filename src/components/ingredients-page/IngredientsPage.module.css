@@ -21,10 +21,11 @@
   align-items: center;
 }
 .ingredients-container-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
   text-align: center;
   color: white;
-  transform: translate(0%, -120%);
+  transform: translate(0%, -85%);
+  text-shadow: 1rem 1rem 1rem black;
 }
 .bases {
   width: 40vw;

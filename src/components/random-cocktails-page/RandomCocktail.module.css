@@ -8,7 +8,7 @@
   border-radius: 1rem;
   border: 3px solid black;
   margin: 0rem 1rem;
-  width: 17vw;
+  width: 15vw;
   z-index: 3;
 }
 .random-cocktail-img:hover {
@@ -22,7 +22,7 @@
   text-align: center;
 }
 .random-cocktail-title {
-  margin: 0.2rem 0rem;
+  margin: 0.2rem 1rem;
   font-size: 2rem;
   -webkit-text-stroke: 0.5px black;
   text-shadow: 0.5px 0.5px 50px rgb(255, 255, 255), 1rem 1rem 0.5rem black;

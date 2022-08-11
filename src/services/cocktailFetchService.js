@@ -1,5 +1,6 @@
 const randomUrl = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
 const authKey = "1";
+
 export const getOneRandom = async () => {
   const response = await fetch(randomUrl, {
     method: "GET",
@@ -9,4 +10,16 @@ export const getOneRandom = async () => {
   const data = await response.json();
   // console.log("data is", data);
   return data.drinks[0];
+};
+export const getBases = async (base) => {
+  // const baseUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${base}`;
+  const baseUrl = `https://www.thecocktaildb.com/images/ingredients/${base}-Medium.png`;
+
+  // console.log(" baseurl", baseUrl);
+  const data = await fetch(baseUrl, {
+    method: "GET",
+    Authorization: authKey,
+  });
+  // console.log("data is", data.url);
+  return data.url;
 };

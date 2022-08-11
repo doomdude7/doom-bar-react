@@ -1,0 +1,32 @@
+.bases {
+  width: 40vw;
+  height: 75vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.base-container {
+  width: 10vw;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.base-container-title {
+  transform: translate(0%, 100%);
+  font-size: 2rem;
+  text-align: center;
+  width: 10vw;
+  color: white;
+}
+.base-container-img {
+  filter: drop-shadow(0rem 0rem 3rem rgb(91, 27, 97));
+  transform: scale(0.45) translate(0%, -30%);
+  z-index: 3;
+}
+.base-container:hover {
+  filter: drop-shadow(0rem 0rem 3rem aqua);
+}

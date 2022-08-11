@@ -27,6 +27,7 @@
   font-size: 3.8rem;
   color: #6b2c80;
   margin-bottom: 1rem;
+  text-align: center;
   -webkit-text-stroke: 0.1px white;
   text-shadow: 2px 2px 2px white, 10px 10px 10px black;
 }
