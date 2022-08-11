@@ -1,0 +1,42 @@
+.ingredients-page {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  flex-direction: column;
+  overflow: hidden;
+}
+.ingredients-page-top-part {
+  height: 120vh;
+}
+.ingredients-container {
+  position: absolute;
+  right: 0;
+  top: 10vh;
+  height: 100vh;
+  width: 46vw;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ingredients-container-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+  transform: translate(0%, -120%);
+}
+.bases {
+  width: 40vw;
+  height: 75vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.svg-container {
+  position: absolute;
+  top: 10vh;
+  width: 50vw;
+}

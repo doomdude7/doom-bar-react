@@ -14,7 +14,9 @@ export const AgeGateModal = () => {
       <div className={`${styles["overlay"]}`}></div>
       <div className={`${styles["age-gate-container"]}`}>
         <div className={`${styles["age-gate-text-container"]}`}>
-          <h1>Welcome to Doom's Bar!</h1>
+          <h1 className={styles["age-gate-text-welcome"]}>
+            Welcome to Doom's Bar!
+          </h1>
           <p>
             Hello there dear traveller of the Internet. <br />
             You must be thirsty, let me crack open a cold one just for you!
@@ -23,7 +25,9 @@ export const AgeGateModal = () => {
           </p>
         </div>
         <div className={`${styles["age-gate-question-container"]}`}>
-          <h2>Are you over 18 years old?</h2>
+          <h2 className={styles["age-gate-text-question"]}>
+            Are you over 18 years old?
+          </h2>
           <div className={`${styles["question-button-container"]}`}>
             <button
               id={`${styles["age-gate-btn-yes"]}`}

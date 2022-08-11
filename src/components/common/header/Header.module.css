@@ -43,10 +43,10 @@ header nav a {
 .refresh:hover {
   background-color: #893ca3;
 }
-nav a:hover {
-  font-size: 2rem;
+.nav-option:hover {
+  font-size: 2.5rem;
   -webkit-text-stroke: 0.5px #893ca3;
-  text-shadow: 2px 2px 2px #893ca3, 3px 3px 3px #3a1845, 10px 10px 10px black;
+  text-shadow: 2px 2px 2px #893ca3, 3px 3px 3px #3a1845, 10px 10px 15px black;
   /* text-decoration: underline;
     text-decoration-color: whitesmoke;
     text-decoration-style: wavy;

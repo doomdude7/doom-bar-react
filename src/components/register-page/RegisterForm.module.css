@@ -1,0 +1,68 @@
+.register-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.register-form-title {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45vw;
+  height: 45vh;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.1rem solid white;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.5);
+}
+.register-form-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45vw;
+  height: 20vh;
+}
+.register-form-button {
+  width: 10vw;
+  height: 5vh;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  border: 0.1rem solid white;
+  border-radius: 0.5rem;
+  background: linear-gradient(0deg, #3a1845, #404040);
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.register-form-button:hover {
+  background: linear-gradient(0deg, #404040, #3a1845);
+  border: 0.1rem solid black;
+}
+.register-form-list label {
+  font-size: 1.6rem;
+  position: absolute;
+  left: 28rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.5rem;
+  margin: 0rem 0.8rem;
+}
+.register-form-list input {
+  border: 0.1rem solid white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 20vw;
+  height: 2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #170a1b;
+}
