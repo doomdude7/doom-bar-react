@@ -4,17 +4,15 @@ import {
   getSelection,
   getById,
 } from "../../services/cocktailFetchService";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { BaseImg } from "./pick-base-section/BaseImg";
 import { SvgContainer } from "./svg-container/SvgContainer";
 import { CocktailCarousel } from "./cocktail-carousel-section/CocktailCarousel";
 import { CocktailDetails } from "../cocktail-details/CocktailDetails";
 import React from "react";
-export const IngredientsPage = () => {
-  let myRef = useRef();
+export const IngredientsPage = ({ favId }) => {
   const [baseProps, setBaseProps] = useState([]);
   const [selectedBase, setSelectedBase] = useState("");
-  const [svgClicked, setSvgClicked] = useState(false);
   const [cocktailSelection, setCocktailSelection] = useState([]);
   const [isShown, setIsShown] = useState(false);
   const [clickedCocktail, setClickedCocktail] = useState([]);
@@ -47,7 +45,6 @@ export const IngredientsPage = () => {
   const svgHandler = () => {
     // console.log("svgHandler recieved :", data);
     detailsClick("16271");
-    setSvgClicked(true);
   };
   // console.log("state: ", svgClicked);
   useEffect(() => {
@@ -70,10 +67,18 @@ export const IngredientsPage = () => {
   const closeModal = () => {
     setIsShown(false);
   };
+  const favouritedHandler = (drinkId) => {
+    console.log(drinkId, "passed through fav handler");
+    favId(drinkId);
+  };
   return (
     <>
       {isShown && (
-        <CocktailDetails cocktail={clickedCocktail} closeClick={closeModal} />
+        <CocktailDetails
+          cocktail={clickedCocktail}
+          closeClick={closeModal}
+          favourited={favouritedHandler}
+        />
       )}
       {!isShown && (
         <section

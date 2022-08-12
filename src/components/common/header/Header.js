@@ -13,8 +13,8 @@ export const Header = () => {
         <Link to="/pick-drink">
           <h3 className={styles["nav-option"]}>Pick a drink</h3>
         </Link>
-        <Link to="/">
-          <h3 className={styles["nav-option"]}>Latest drinks</h3>
+        <Link to="/favourites">
+          <h3 className={styles["nav-option"]}>Favourites</h3>
         </Link>
       </nav>
       <div className="auth-buttons-container">

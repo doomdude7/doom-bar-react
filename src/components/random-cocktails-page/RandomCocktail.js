@@ -1,8 +1,11 @@
 import styles from "./RandomCocktail.module.css";
 import { CocktailDetails } from "../cocktail-details/CocktailDetails";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 export const RandomCocktail = ({ cocktail, detailsClick }) => {
-  // console.log(cocktail.cocktail);
+  console.log(cocktail.cocktail);
+  useEffect(() => {
+    console.log("cocktail", cocktail);
+  }, [cocktail]);
   const cocktailDetailsHandler = (cocktail) => {
     // console.log(cocktail);
     // CocktailDetails(cocktail);

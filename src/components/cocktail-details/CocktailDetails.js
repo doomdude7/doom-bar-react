@@ -1,12 +1,17 @@
 import styles from "./CocktailDetails.module.css";
 import global from "../../App.module.css";
 
-export const CocktailDetails = ({ cocktail, closeClick }) => {
-  console.log("passed cocktail data", cocktail);
+export const CocktailDetails = ({ cocktail, closeClick, favourited }) => {
+  // console.log("passed cocktail data", cocktail);
 
   const closeDetailsHandler = () => {
     closeClick(false);
     // console.log("closeDetailsHandler");
+  };
+  const heartClickHandler = () => {
+    console.log("heart");
+    favourited(cocktail.idDrink);
+    // localStorage.setItem("favourites", JSON.stringify(cocktail));
   };
   return (
     <section
@@ -17,6 +22,12 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
         onClick={closeDetailsHandler}
       >
         X
+      </button>
+      <button
+        className={`${styles["heart-cocktail-details"]}`}
+        onClick={heartClickHandler}
+      >
+        ❤
       </button>
       <div className={`${styles["cocktail-details"]}`}>
         <h1
@@ -81,7 +92,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure4 === null || cocktail.strMeasure4 === "" ? (
+          {cocktail.strMeasure4 === null ||
+          cocktail.strMeasure4 === "" ||
+          cocktail.strMeasure4 === "\n" ? (
             cocktail.strIngredient4 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -93,7 +106,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure5 === null || cocktail.strMeasure5 === "" ? (
+          {cocktail.strMeasure5 === null ||
+          cocktail.strMeasure5 === "" ||
+          cocktail.strMeasure5 === "\n" ? (
             cocktail.strIngredient5 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -105,7 +120,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure6 === null || cocktail.strMeasure6 === "" ? (
+          {cocktail.strMeasure6 === null ||
+          cocktail.strMeasure6 === "" ||
+          cocktail.strMeasure6 === "\n" ? (
             cocktail.strIngredient6 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -117,7 +134,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure7 === null || cocktail.strMeasure7 === "" ? (
+          {cocktail.strMeasure7 === null ||
+          cocktail.strMeasure7 === "" ||
+          cocktail.strMeasure7 === "\n" ? (
             cocktail.strIngredient7 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -129,7 +148,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure8 === null || cocktail.strMeasure8 === "" ? (
+          {cocktail.strMeasure8 === null ||
+          cocktail.strMeasure8 === "" ||
+          cocktail.strMeasure8 === "\n" ? (
             cocktail.strIngredient8 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -141,7 +162,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure9 === null || cocktail.strMeasure9 === "" ? (
+          {cocktail.strMeasure9 === null ||
+          cocktail.strMeasure9 === "" ||
+          cocktail.strMeasure9 === "\n" ? (
             cocktail.strIngredient9 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -153,7 +176,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure10 === null || cocktail.strMeasure10 === "" ? (
+          {cocktail.strMeasure10 === null ||
+          cocktail.strMeasure10 === "" ||
+          cocktail.strMeasure10 === "\n" ? (
             cocktail.strIngredient10 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -165,7 +190,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure11 === null || cocktail.strMeasure11 === "" ? (
+          {cocktail.strMeasure11 === null ||
+          cocktail.strMeasure11 === "" ||
+          cocktail.strMeasure11 === "\n" ? (
             cocktail.strIngredient11 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -177,7 +204,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure12 === null || cocktail.strMeasure12 === "" ? (
+          {cocktail.strMeasure12 === null ||
+          cocktail.strMeasure12 === "" ||
+          cocktail.strMeasure12 === "\n" ? (
             cocktail.strIngredient12 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -189,7 +218,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure13 === null || cocktail.strMeasure13 === "" ? (
+          {cocktail.strMeasure13 === null ||
+          cocktail.strMeasure13 === "" ||
+          cocktail.strMeasure13 === "\n" ? (
             cocktail.strIngredient13 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -201,7 +232,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure14 === null || cocktail.strMeasure14 === "" ? (
+          {cocktail.strMeasure14 === null ||
+          cocktail.strMeasure14 === "" ||
+          cocktail.strMeasure14 === "\n" ? (
             cocktail.strIngredient14 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>
@@ -213,7 +246,9 @@ export const CocktailDetails = ({ cocktail, closeClick }) => {
               </span>
             </p>
           )}
-          {cocktail.strMeasure15 === null || cocktail.strMeasure15 === "" ? (
+          {cocktail.strMeasure15 === null ||
+          cocktail.strMeasure15 === "" ||
+          cocktail.strMeasure15 === "\n" ? (
             cocktail.strIngredient15 === null
           ) : (
             <p className={`${styles["ingredients-item"]}`}>

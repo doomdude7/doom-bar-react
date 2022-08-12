@@ -4,7 +4,7 @@ import { getOneRandom } from "../../services/cocktailFetchService";
 import { useState, useEffect } from "react";
 import { RandomCocktail } from "./RandomCocktail";
 import { CocktailDetails } from "../cocktail-details/CocktailDetails";
-export const RandomCocktailsPage = () => {
+export const RandomCocktailsPage = ({ favId }) => {
   const [cocktails, setCocktails] = useState([]);
   const [clickedCocktail, setClickedCocktail] = useState([]);
   const [isShown, setIsShown] = useState(false);
@@ -19,16 +19,24 @@ export const RandomCocktailsPage = () => {
     console.log("detailsClick", data);
     // console.log("dive", data);
     setIsShown(true);
-    console.log("isShown", isShown);
+    // console.log("isShown", isShown);
     setClickedCocktail(data);
   };
   const closeModal = () => {
     setIsShown(false);
   };
+  const favouritedHandler = (drinkId) => {
+    // console.log(drinkId, "passed through fav handler");
+    favId(drinkId);
+  };
   return (
     <>
       {isShown && (
-        <CocktailDetails cocktail={clickedCocktail} closeClick={closeModal} />
+        <CocktailDetails
+          cocktail={clickedCocktail}
+          closeClick={closeModal}
+          favourited={favouritedHandler}
+        />
       )}
 
       <section

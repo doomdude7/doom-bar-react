@@ -27,6 +27,26 @@
   border-radius: 0.5rem;
   z-index: 99;
 }
+.heart-cocktail-details {
+  position: absolute;
+  top: 15vh;
+  left: 3vw;
+  width: 4rem;
+  height: 3rem;
+  background-color: #893ca3;
+  color: white;
+  border-radius: 0.5rem;
+  z-index: 99;
+}
+.heart-cocktail-details:hover {
+  width: 4.2rem;
+  height: 3.2rem;
+  border-color: whitesmoke;
+  border-style: double;
+  border-width: 0.5rem;
+  background-color: #411d4d;
+  color: aqua;
+}
 .close-cocktail-details:hover {
   width: 4.2rem;
   height: 3.2rem;
