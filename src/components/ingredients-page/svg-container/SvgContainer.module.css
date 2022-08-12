@@ -1,0 +1,30 @@
+.svg-container {
+  position: absolute;
+  top: 5vh;
+  filter: drop-shadow(0rem -7rem 10rem rgba(246, 241, 247, 0.5));
+}
+.svg-container:hover .umbrella {
+  filter: drop-shadow(0rem 0rem 1rem aqua);
+}
+.svg-container:hover {
+  filter: drop-shadow(0rem -5rem 8rem rgba(243, 247, 247, 0.8));
+}
+
+.base {
+  position: absolute;
+  transform: scale(0.8) Translate(0%, 0%);
+  /* filter: hue-rotate(40deg) saturate(0.5) brightness(120%) saturate(4); */
+}
+.head {
+  position: absolute;
+  transform: scale(0.8) Translate(415%, 36%);
+  /* filter: hue-rotate(40deg) saturate(0.5) brightness(120%) saturate(4); */
+}
+.lemon {
+  position: absolute;
+  transform: scale(0.8) Translate(760%, 285%);
+}
+.umbrella {
+  position: absolute;
+  transform: scale(0.8) Translate(570%, 185%);
+}

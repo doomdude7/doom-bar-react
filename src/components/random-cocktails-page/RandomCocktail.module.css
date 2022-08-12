@@ -6,9 +6,10 @@
 }
 .random-cocktail-img {
   border-radius: 1rem;
-  border: 3px solid black;
+  border: 0.5rem solid #6b2c80;
   margin: 0rem 1rem;
   width: 15vw;
+  box-shadow: 0rem 0rem 3.5rem rgba(198, 185, 202, 0.8);
   z-index: 3;
 }
 .random-cocktail-img:hover {

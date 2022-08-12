@@ -23,3 +23,17 @@ export const getBases = async (base) => {
   // console.log("data is", data.url);
   return data.url;
 };
+export const getSelection = async (base) => {
+  const baseUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${base}`;
+  console.log(" base", base);
+  const data = await fetch(baseUrl, {
+    method: "GET",
+    Authorization: authKey,
+    headers: { Accept: "application/json" },
+  });
+  const dataJson = await data.json();
+  console.log(dataJson, "dataJson");
+
+  console.log(dataJson.drinks, "dataJson.drinks");
+  return dataJson.drinks;
+};

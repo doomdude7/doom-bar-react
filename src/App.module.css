@@ -11,7 +11,7 @@ body {
   max-width: 100vw;
   cursor: url("./components/common/cursor/assets/cursor.png"), auto;
   overflow-x: hidden;
-  background: linear-gradient(0deg, #3a1845, #404040);
+  background: linear-gradient(0deg, #3a1845, #2c1035);
 }
 a,
 button {

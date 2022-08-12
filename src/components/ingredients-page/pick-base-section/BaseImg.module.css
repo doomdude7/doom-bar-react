@@ -16,7 +16,7 @@
   text-align: center;
 }
 .base-container-title {
-  transform: translate(0%, 100%);
+  transform: translate(0%, 220%);
   font-size: 2rem;
   text-align: center;
   width: 10vw;
@@ -24,7 +24,7 @@
 }
 .base-container-img {
   filter: drop-shadow(0rem 0rem 3rem rgb(91, 27, 97));
-  transform: scale(0.45) translate(0%, -30%);
+  transform: scale(0.45) translate(0%, 20%);
   z-index: 3;
 }
 .base-container:hover {

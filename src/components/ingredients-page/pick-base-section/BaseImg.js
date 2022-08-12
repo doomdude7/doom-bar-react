@@ -1,9 +1,9 @@
 import styles from "./BaseImg.module.css";
-export const BaseImg = ({ baseProp }) => {
+export const BaseImg = ({ baseProp, selectedBase }) => {
   // console.log(baseProp.baseImg, "baseUrl");
   // console.log(baseProp.baseName, "baseName");
   const baseClickHandler = (base) => {
-    console.log("baseClickHandler", base);
+    selectedBase(base);
   };
   return (
     <section

@@ -9,6 +9,7 @@ import { AgeGateModal } from "./components/common/age-gate/AgeGateModal.js";
 import { IngredientsPage } from "./components/ingredients-page/IngredientsPage";
 import { LoginForm } from "./components/login-page/LoginForm";
 import { RegisterForm } from "./components/register-page/RegisterForm";
+
 function App() {
   const checkLocalStorage = localStorage.getItem("ageConsent");
   return (
@@ -24,9 +25,9 @@ function App() {
           <Route path="/register" element={<RegisterForm />} />
         </Routes>
         {/* <HomePage /> */}
-        <Footer />
-        <Cursor />
       </main>
+      <Footer />
+      <Cursor />
     </div>
   );
 }
