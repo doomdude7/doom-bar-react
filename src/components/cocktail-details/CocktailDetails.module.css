@@ -4,21 +4,21 @@
   height: 150vh;
   position: absolute;
   display: flex;
-  top: 8vh;
+  top: 0vh;
   background-color: #202020fa;
-  z-index: 30;
+  z-index: 5;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 .cocktail-details {
   text-align: center;
-  transform: translateY(-180%);
+  transform: translateY(-150%);
   z-index: 2;
 }
 .close-cocktail-details {
   position: absolute;
-  top: 7vh;
+  top: 15vh;
   right: 10vw;
   width: 4rem;
   height: 3rem;

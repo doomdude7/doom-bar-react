@@ -3,11 +3,10 @@ import global from "../../App.module.css";
 
 export const CocktailDetails = ({ cocktail, closeClick }) => {
   console.log("passed cocktail data", cocktail);
-  console.log("dive cocktail data", cocktail);
 
   const closeDetailsHandler = () => {
     closeClick(false);
-    console.log("closeDetailsHandler");
+    // console.log("closeDetailsHandler");
   };
   return (
     <section
