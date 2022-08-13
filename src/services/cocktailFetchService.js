@@ -32,7 +32,7 @@ export const getSelection = async (base) => {
     headers: { Accept: "application/json" },
   });
   const dataJson = await data.json();
-  // console.log(dataJson, "dataJson");
+  console.log(dataJson, "dataJson");
 
   // console.log(dataJson.drinks, "dataJson.drinks");
   return dataJson.drinks;

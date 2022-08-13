@@ -11,6 +11,7 @@ import { LoginForm } from "./components/login-page/LoginForm";
 import { RegisterForm } from "./components/register-page/RegisterForm";
 import { FavouritesPage } from "./components/favourites-page/FavouritesPage";
 import { useEffect, useState } from "react";
+import { CocktailDetails } from "./components/cocktail-details/CocktailDetails";
 function App() {
   const checkLocalStorage = localStorage.getItem("ageConsent");
   const [sessionFavs, setSessionFavs] = useState([]);
@@ -25,7 +26,14 @@ function App() {
       <main>
         {!checkLocalStorage && <AgeGateModal />}
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <HomePage /> <Footer />
+              </>
+            }
+          />
           <Route
             path="/random-cocktails"
             element={<RandomCocktailsPage favId={favIdHandler} />}
@@ -40,10 +48,11 @@ function App() {
           />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
+          <Route path="/details/*" element={<CocktailDetails />} />
         </Routes>
         {/* <HomePage /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
       <Cursor />
     </div>
   );

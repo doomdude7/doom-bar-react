@@ -68,7 +68,7 @@ export const IngredientsPage = ({ favId }) => {
     setIsShown(false);
   };
   const favouritedHandler = (drinkId) => {
-    console.log(drinkId, "passed through fav handler");
+    // console.log(drinkId, "passed through fav handler");
     favId(drinkId);
   };
   return (

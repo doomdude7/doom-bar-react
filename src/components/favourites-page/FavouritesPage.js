@@ -22,7 +22,7 @@ export const FavouritesPage = ({ sessionFavs }) => {
   useEffect(() => {
     sessionFavs.map((fav) => {
       // console.log(fav, "mapped fav");
-      getById(fav).then((cocktail) => {
+      return getById(fav).then((cocktail) => {
         // console.log("cocktail from getById", cocktail);
         setFavourites((prevState) => [...prevState, cocktail]);
       });
