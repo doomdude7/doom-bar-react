@@ -14,6 +14,7 @@ export const FavouritesPage = ({ sessionFavs }) => {
     setIsShown(true);
     console.log("isShown", isShown);
     setClickedCocktail(data);
+    window.scroll({ top: 0, behavior: "smooth" });
   };
   const closeModal = () => {
     setIsShown(false);
@@ -44,11 +45,11 @@ export const FavouritesPage = ({ sessionFavs }) => {
         ) : (
           <div className={`${styles["favourites-list"]}`}>
             {favourites &&
-              favourites.map((fav) => {
+              favourites.map((fav, index) => {
                 // console.log(fav, "fav");
                 return (
                   <RandomCocktail
-                    key={fav.idDrink + fav.strDrink}
+                    key={fav.idDrink + fav.strDrink + index}
                     cocktail={fav}
                     detailsClick={detailsClick}
                   />

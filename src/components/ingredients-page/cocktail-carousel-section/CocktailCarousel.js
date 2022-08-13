@@ -11,6 +11,7 @@ export const CocktailCarousel = ({ cocktailSelection, detailsClick }) => {
     <>
       {cocktailSelection.map((cocktail) => {
         // console.log("this is cocktail", cocktail);
+
         return (
           <div
             className={styles["cocktail-carousel-item"]}

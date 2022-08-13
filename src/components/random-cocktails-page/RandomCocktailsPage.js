@@ -21,6 +21,7 @@ export const RandomCocktailsPage = ({ favId }) => {
     setIsShown(true);
     // console.log("isShown", isShown);
     setClickedCocktail(data);
+    window.scroll({ top: 0, behavior: "smooth" });
   };
   const closeModal = () => {
     setIsShown(false);
@@ -50,9 +51,9 @@ export const RandomCocktailsPage = ({ favId }) => {
         </div>
         <div className={`${styles["cocktail-container"]}`}>
           {cocktails &&
-            cocktails.map((cocktail) => (
+            cocktails.map((cocktail, index) => (
               <RandomCocktail
-                key={cocktail.idDrink}
+                key={index + cocktail.idDrink}
                 cocktail={cocktail}
                 detailsClick={detailsClick}
               />

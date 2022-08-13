@@ -16,8 +16,10 @@ function App() {
   const checkLocalStorage = localStorage.getItem("ageConsent");
   const [sessionFavs, setSessionFavs] = useState([]);
   const favIdHandler = (id) => {
-    // console.log(id, "id passed through fav handler -- app");
-    setSessionFavs((prevState) => [...prevState, id]);
+    console.log(id, "id passed through fav handler -- app");
+    sessionFavs.find((fav) => fav === id)
+      ? alert("already in favourites")
+      : setSessionFavs([...sessionFavs, id]);
   };
   console.log("sessionFavs state: ", sessionFavs);
   return (

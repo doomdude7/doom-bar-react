@@ -17,7 +17,7 @@
   right: 0;
   top: 10vh;
   height: 80vh;
-  width: 46vw;
+  width: 76vw;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -28,11 +28,11 @@
   font-size: 3rem;
   text-align: center;
   color: white;
-  transform: translate(0%, 10%);
+  transform: translate(-50%, 10%);
   text-shadow: 1rem 1rem 1rem black;
 }
 .bases {
-  width: 40vw;
+  width: 65vw;
   height: 75vh;
   display: flex;
   flex-wrap: wrap;

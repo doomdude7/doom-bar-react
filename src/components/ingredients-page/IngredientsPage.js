@@ -19,16 +19,20 @@ export const IngredientsPage = ({ favId }) => {
   const selectHandler = (data) => {
     // console.log("selectHandler", data);
     setSelectedBase(data);
+    window.scroll({ bottom: 0, behavior: "smooth" });
   };
   // console.log("selectedBase", selectedBase);
   useEffect(() => {
     const bases = [
       "vodka",
       "rum",
+      "tequila",
       "scotch",
-      "whiskey",
       "champagne",
+      "red wine",
+      "triple sec",
       "beer",
+      "cognac",
       "gin",
     ];
     bases.map((base) => {
@@ -57,11 +61,13 @@ export const IngredientsPage = ({ favId }) => {
   const detailsClick = (data) => {
     console.log("detailsClick", data);
     // console.log("dive", data);
+    window.scroll({ top: 0, behavior: "smooth" });
     setIsShown(true);
     getById(data).then((response) => {
       console.log("response", response);
       setClickedCocktail(response);
     });
+
     // console.log("isShown", isShown);
   };
   const closeModal = () => {
@@ -71,6 +77,7 @@ export const IngredientsPage = ({ favId }) => {
     // console.log(drinkId, "passed through fav handler");
     favId(drinkId);
   };
+  console.log("clickedCocktail", clickedCocktail);
   return (
     <>
       {isShown && (

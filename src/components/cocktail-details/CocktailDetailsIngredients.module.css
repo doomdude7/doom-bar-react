@@ -1,0 +1,44 @@
+.cocktail-instructions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0rem 2rem;
+  height: 60vh;
+  width: 50vw;
+}
+.cocktail-instructions h2 {
+  color: #6b2c80;
+}
+.ingredients-list {
+  margin: 1rem 0rem;
+  font-size: 3rem;
+  color: #893ca3;
+}
+.ingredients-list-title {
+  font-size: 3rem;
+  color: #893ca3;
+  text-shadow: 0rem 0.5rem 0.7rem rgba(234, 226, 236, 0.15);
+}
+.ingredients-item {
+  margin: 0.5rem 0rem;
+  font-size: 1.8rem;
+  display: flex;
+  color: #893ca3;
+}
+.ingredients-item-sub,
+.ingredients-item-main {
+  display: flex;
+  margin: 0rem 0.4rem;
+}
+.instructions-p {
+  margin: 1rem 0rem;
+  font-size: 1.5rem;
+  color: #893ca3;
+  text-align: center;
+}
+.instructions-p-title {
+  font-size: 3rem;
+  color: #893ca3;
+  text-shadow: 0rem 0.5rem 0.7rem rgba(234, 226, 236, 0.15);
+}

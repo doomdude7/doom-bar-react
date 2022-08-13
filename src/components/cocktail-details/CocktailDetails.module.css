@@ -27,6 +27,7 @@
   border-radius: 0.5rem;
   z-index: 99;
 }
+
 .heart-cocktail-details {
   position: absolute;
   top: 15vh;
@@ -63,41 +64,6 @@
   transform: translateY(-50%);
   background-color: #202020;
   border-radius: 2rem;
-}
-
-.cocktail-instructions {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0rem 2rem;
-  height: 60vh;
-  width: 50vw;
-}
-.ingredients-list {
-  margin: 1rem 0rem;
-  font-size: 3rem;
-  color: #893ca3;
-}
-.ingredients-item {
-  margin: 0.5rem 0rem;
-  font-size: 1.8rem;
-  display: flex;
-  color: #893ca3;
-}
-.ingredients-item-sub,
-.ingredients-item-main {
-  display: flex;
-  margin: 0rem 0.4rem;
-}
-.instructions-p {
-  margin: 1rem 0rem;
-  font-size: 1.5rem;
-  color: #893ca3;
-  text-align: center;
-}
-.cocktail-instructions h2 {
-  color: #6b2c80;
 }
 .cocktails-details-category {
   font-size: 2rem;
