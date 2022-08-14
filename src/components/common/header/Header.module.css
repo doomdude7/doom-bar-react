@@ -111,7 +111,7 @@ header nav a {
   align-items: center;
   justify-content: center;
   width: 30vw;
-  height: 65vh;
+  height: 70vh;
   background-color: rgba(58, 15, 68, 0.707);
   border: 0.5rem solid #b933ee67;
   border-bottom-left-radius: 2rem;
@@ -125,10 +125,27 @@ header nav a {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  margin-top: 1.8rem;
   width: 28vw;
-  height: 56vh;
+  height: 61vh;
   overflow-y: scroll;
   background-color: rgba(58, 15, 68, 0.607);
   position: fixed;
   z-index: 15;
+}
+.close-search-results {
+  position: fixed;
+  top: 3px;
+  right: 3px;
+  width: 2.2rem;
+  height: 2.2rem;
+  background-color: black;
+  border: 3px solid whitesmoke;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  z-index: 20;
 }

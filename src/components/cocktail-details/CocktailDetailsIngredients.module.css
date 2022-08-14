@@ -6,11 +6,15 @@
   margin: 0rem 2rem;
   height: 60vh;
   width: 50vw;
+  /* overflow-y: visible; */
 }
 .cocktail-instructions h2 {
   color: #6b2c80;
 }
 .ingredients-list {
+  /* display: flex; */
+  /* flex-direction: column;
+  flex-wrap: wrap; */
   margin: 1rem 0rem;
   font-size: 3rem;
   color: #893ca3;

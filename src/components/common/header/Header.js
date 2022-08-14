@@ -3,22 +3,43 @@ import { Link } from "react-router-dom";
 import { getByName } from "../../../services/cocktailFetchService";
 import { useState } from "react";
 import { SearchItem } from "./search-item/SearchItem";
-export const Header = () => {
+import { CocktailDetails } from "../../cocktail-details/CocktailDetails";
+export const Header = ({ favId }) => {
   const [searchCocktails, setSearchCocktails] = useState(null);
+  const [clickedCocktail, setClickedCocktail] = useState([]);
+  const [isShown, setIsShown] = useState(false);
   const submitSearchHandler = (e) => {
     e.preventDefault();
     const inputValue = e.target.value;
     console.log(inputValue);
-    getByName(inputValue).then((data) => {
-      // console.log(data, "data");
-      if (data === null) {
-        setSearchCocktails([]);
-      } else {
-        setSearchCocktails((prevState) => data);
-      }
-    });
+    !inputValue == " " &&
+      getByName(inputValue).then((data) => {
+        // console.log(data, "data");
+        if (data === null) {
+          setSearchCocktails([]);
+        } else {
+          setSearchCocktails((prevState) => data);
+        }
+      });
   };
   console.log(searchCocktails, "searchCocktails");
+
+  const detailsClick = (data) => {
+    setSearchCocktails(null);
+    console.log("detailsClick", data);
+    // console.log("dive", data);
+    setIsShown(true);
+    console.log("isShown", isShown);
+    setClickedCocktail(data);
+    window.scroll({ top: 0, behavior: "smooth" });
+  };
+  const closeModal = () => {
+    setIsShown(false);
+  };
+  const favouritedHandler = (drinkId) => {
+    // console.log(drinkId, "passed through fav handler");
+    favId(drinkId);
+  };
   return (
     <>
       <header>
@@ -41,7 +62,6 @@ export const Header = () => {
             className={styles["search-field"]}
             onChange={submitSearchHandler}
             onClick={submitSearchHandler}
-            onBlur={() => setSearchCocktails(null)}
           />
         </nav>
         <div className="auth-buttons-container">
@@ -63,11 +83,32 @@ export const Header = () => {
           </Link>
         </div>
       </header>
+      {isShown && (
+        <CocktailDetails
+          cocktail={clickedCocktail}
+          closeClick={closeModal}
+          favourited={favouritedHandler}
+        />
+      )}
       {!searchCocktails == [] && (
-        <div className={styles["search-results-container"]}>
+        <div
+          className={styles["search-results-container"]}
+          // onBlur={() => setSearchCocktails(null)}
+          // onMouseLeave={() => setSearchCocktails(null)}
+        >
+          <button
+            className={styles["close-search-results"]}
+            onClick={() => setSearchCocktails(null)}
+          >
+            X
+          </button>
           <div className={styles["search-results-list"]}>
             {searchCocktails.map((item, index) => (
-              <SearchItem key={item.idDrink + index * 2} cocktail={item} />
+              <SearchItem
+                key={item.idDrink + index * 2}
+                cocktail={item}
+                detailsClick={detailsClick}
+              />
             ))}
           </div>
         </div>

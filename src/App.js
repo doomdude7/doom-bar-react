@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       {!checkLocalStorage && <AgeGateModal />}
 
-      <Header />
+      <Header favId={favIdHandler} />
       <main>
         <Routes>
           <Route
