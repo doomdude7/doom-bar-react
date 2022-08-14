@@ -18,15 +18,16 @@ function App() {
   const favIdHandler = (id) => {
     console.log(id, "id passed through fav handler -- app");
     sessionFavs.find((fav) => fav === id)
-      ? alert("already in favourites")
+      ? console.log("already in favourites")
       : setSessionFavs([...sessionFavs, id]);
   };
   console.log("sessionFavs state: ", sessionFavs);
   return (
     <div className="App">
+      {!checkLocalStorage && <AgeGateModal />}
+
       <Header />
       <main>
-        {!checkLocalStorage && <AgeGateModal />}
         <Routes>
           <Route
             path="/"

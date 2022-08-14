@@ -48,3 +48,14 @@ export const getById = async (id) => {
   // console.log(dataJson, "dataJson");
   return dataJson.drinks[0];
 };
+export const getByName = async (name) => {
+  const baseUrl = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`;
+  const data = await fetch(baseUrl, {
+    method: "GET",
+    Authorization: authKey,
+    headers: { Accept: "application/json" },
+  });
+  const dataJson = await data.json();
+  // console.log(dataJson, "dataJson");
+  return dataJson.drinks;
+};

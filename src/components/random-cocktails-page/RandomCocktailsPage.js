@@ -4,7 +4,7 @@ import { getOneRandom } from "../../services/cocktailFetchService";
 import { useState, useEffect } from "react";
 import { RandomCocktail } from "./RandomCocktail";
 import { CocktailDetails } from "../cocktail-details/CocktailDetails";
-export const RandomCocktailsPage = ({ favId }) => {
+export const RandomCocktailsPage = ({ favId, alert }) => {
   const [cocktails, setCocktails] = useState([]);
   const [clickedCocktail, setClickedCocktail] = useState([]);
   const [isShown, setIsShown] = useState(false);
@@ -37,6 +37,7 @@ export const RandomCocktailsPage = ({ favId }) => {
           cocktail={clickedCocktail}
           closeClick={closeModal}
           favourited={favouritedHandler}
+          alert={alert}
         />
       )}
 

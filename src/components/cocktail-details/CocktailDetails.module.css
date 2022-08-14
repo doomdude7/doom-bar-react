@@ -33,20 +33,23 @@
   top: 15vh;
   left: 3vw;
   width: 4rem;
-  height: 3rem;
+  height: 3.5rem;
   background-color: #893ca3;
   color: white;
+  font-size: 2.2rem;
   border-radius: 0.5rem;
   z-index: 99;
 }
 .heart-cocktail-details:hover {
-  width: 4.2rem;
-  height: 3.2rem;
   border-color: whitesmoke;
   border-style: double;
-  border-width: 0.5rem;
+  border-width: 0.3rem;
   background-color: #411d4d;
   color: aqua;
+}
+.heart-cocktail-details:focus {
+  color: red;
+  clip-path: circle(35% at 50% 50%);
 }
 .close-cocktail-details:hover {
   width: 4.2rem;

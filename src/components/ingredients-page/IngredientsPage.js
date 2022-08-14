@@ -31,7 +31,7 @@ export const IngredientsPage = ({ favId }) => {
       "champagne",
       "red wine",
       "triple sec",
-      "beer",
+      "bourbon",
       "cognac",
       "gin",
     ];
@@ -61,7 +61,7 @@ export const IngredientsPage = ({ favId }) => {
   const detailsClick = (data) => {
     console.log("detailsClick", data);
     // console.log("dive", data);
-    window.scroll({ top: 0, behavior: "smooth" });
+    // window.scroll({ top: 0, behavior: "smooth" });
     setIsShown(true);
     getById(data).then((response) => {
       console.log("response", response);

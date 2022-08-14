@@ -1,7 +1,6 @@
 import styles from "./CocktailDetails.module.css";
 import global from "../../App.module.css";
 import { CocktailDetailsIngredients } from "./CocktailDetailsIngredients";
-
 export const CocktailDetails = ({ cocktail, closeClick, favourited }) => {
   console.log("passed cocktail data", cocktail);
 
@@ -30,6 +29,7 @@ export const CocktailDetails = ({ cocktail, closeClick, favourited }) => {
       >
         ❤
       </button>
+
       <div className={`${styles["cocktail-details"]}`}>
         <h1
           className={`${styles["cocktails-details-title"]}`}

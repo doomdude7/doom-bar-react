@@ -1,0 +1,13 @@
+.fav-alert {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  border: 1rem solid black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
