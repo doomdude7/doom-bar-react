@@ -1,12 +1,14 @@
 import styles from "./CocktailDetails.module.css";
 import global from "../../App.module.css";
 import { CocktailDetailsIngredients } from "./CocktailDetailsIngredients";
+import { useParams, useNavigate } from "react-router-dom";
+
 export const CocktailDetails = ({ cocktail, closeClick, favourited }) => {
   console.log("passed cocktail data", cocktail);
 
   const closeDetailsHandler = () => {
-    closeClick(false);
-    // console.log("closeDetailsHandler");
+    closeClick("close");
+    console.log("closeDetailsHandler");
   };
   const heartClickHandler = () => {
     console.log("heart");

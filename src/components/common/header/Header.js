@@ -1,13 +1,14 @@
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getByName } from "../../../services/cocktailFetchService";
 import { useState } from "react";
 import { SearchItem } from "./search-item/SearchItem";
 import { CocktailDetails } from "../../cocktail-details/CocktailDetails";
-export const Header = ({ favId }) => {
+export const Header = ({ clickedCocktail }) => {
   const [searchCocktails, setSearchCocktails] = useState(null);
-  const [clickedCocktail, setClickedCocktail] = useState([]);
-  const [isShown, setIsShown] = useState(false);
+  // const [clickedCocktail, setClickedCocktail] = useState([]);
+  // const [isShown, setIsShown] = useState(false);
+  const navigate = useNavigate();
   const submitSearchHandler = (e) => {
     e.preventDefault();
     const inputValue = e.target.value;
@@ -28,18 +29,19 @@ export const Header = ({ favId }) => {
     setSearchCocktails(null);
     console.log("detailsClick", data);
     // console.log("dive", data);
-    setIsShown(true);
-    console.log("isShown", isShown);
-    setClickedCocktail(data);
+    // setIsShown(true);
+    navigate(`/cocktails/${data.idDrink}`);
+    // console.log("isShown", isShown);
+    clickedCocktail(data);
     window.scroll({ top: 0, behavior: "smooth" });
   };
-  const closeModal = () => {
-    setIsShown(false);
-  };
-  const favouritedHandler = (drinkId) => {
-    // console.log(drinkId, "passed through fav handler");
-    favId(drinkId);
-  };
+  // const closeModal = () => {
+  //   setIsShown(false);
+  // };
+  // const favouritedHandler = (drinkId) => {
+  //   console.log(drinkId, "passed through fav handler");
+  //   favId(drinkId);
+  // };
   return (
     <>
       <header>
@@ -83,13 +85,13 @@ export const Header = ({ favId }) => {
           </Link>
         </div>
       </header>
-      {isShown && (
+      {/* {isShown && (
         <CocktailDetails
           cocktail={clickedCocktail}
           closeClick={closeModal}
           favourited={favouritedHandler}
         />
-      )}
+      )} */}
       {!searchCocktails == [] && (
         <div
           className={styles["search-results-container"]}

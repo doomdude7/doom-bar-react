@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { RandomCocktail } from "./../random-cocktails-page/RandomCocktail";
 import { CocktailDetails } from "../cocktail-details/CocktailDetails";
 import { getById } from "../../services/cocktailFetchService";
-export const FavouritesPage = ({ sessionFavs, favId }) => {
+export const FavouritesPage = ({ sessionFavs }) => {
   const [favourites, setFavourites] = useState([]);
   const [clickedCocktail, setClickedCocktail] = useState([]);
   const [isShown, setIsShown] = useState(false);
@@ -28,10 +28,10 @@ export const FavouritesPage = ({ sessionFavs, favId }) => {
       });
     });
   }, [sessionFavs]);
-  const favClickHandler = (drinkId) => {
-    console.log(drinkId, "passed through fav handler");
-    favId(drinkId);
-  };
+  // const favClickHandler = (drinkId) => {
+  //   console.log(drinkId, "passed through fav handler");
+  //   favId(drinkId);
+  // };
   // console.log("favourites logs", favourites);
   const favouritesDuplicateFilter = [
     ...new Map(favourites.map((item) => [JSON.stringify(item), item])).values(),
@@ -40,11 +40,7 @@ export const FavouritesPage = ({ sessionFavs, favId }) => {
   return (
     <>
       {isShown && (
-        <CocktailDetails
-          cocktail={clickedCocktail}
-          closeClick={closeModal}
-          favourited={favClickHandler}
-        />
+        <CocktailDetails cocktail={clickedCocktail} closeClick={closeModal} />
       )}
       {!isShown && (
         <section

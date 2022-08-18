@@ -1,5 +1,5 @@
 import "./App.module.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate, Link } from "react-router-dom";
 import { Footer } from "./components/common/footer/Footer.js";
 import { Header } from "./components/common/header/Header.js";
 import { Cursor } from "./components/common/cursor/Cursor.js";
@@ -10,11 +10,16 @@ import { IngredientsPage } from "./components/ingredients-page/IngredientsPage";
 import { LoginForm } from "./components/login-page/LoginForm";
 import { RegisterForm } from "./components/register-page/RegisterForm";
 import { FavouritesPage } from "./components/favourites-page/FavouritesPage";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CocktailDetails } from "./components/cocktail-details/CocktailDetails";
 function App() {
   const checkLocalStorage = localStorage.getItem("ageConsent");
   const [sessionFavs, setSessionFavs] = useState([]);
+  const [clickedCocktail, setClickedCocktail] = useState([]);
+  const navigate = useNavigate();
+  const clickedCocktailHandler = (cocktail) => {
+    setClickedCocktail(cocktail);
+  };
   const favIdHandler = (id) => {
     console.log(id, "id passed through fav handler -- app");
     sessionFavs.find((fav) => fav === id)
@@ -22,14 +27,19 @@ function App() {
       : setSessionFavs([...sessionFavs, id]);
     console.log("sessionFavs state: ", sessionFavs);
   };
+  const closeModal = (data) => {
+    console.log("close button", data);
+    navigate(-1);
+  };
   return (
     <div className="App">
       {!checkLocalStorage && <AgeGateModal />}
 
-      <Header favId={favIdHandler} />
+      <Header clickedCocktail={clickedCocktailHandler} />
       <main>
         <Routes>
           <Route
+            index
             path="/"
             element={
               <>
@@ -39,24 +49,32 @@ function App() {
           />
           <Route
             path="/random-cocktails"
-            element={<RandomCocktailsPage favId={favIdHandler} />}
+            element={
+              <RandomCocktailsPage clickedCocktail={clickedCocktailHandler} />
+            }
           />
           <Route
             path="/pick-drink"
-            element={<IngredientsPage favId={favIdHandler} />}
+            element={
+              <IngredientsPage clickedCocktail={clickedCocktailHandler} />
+            }
           />
           <Route
             path="/favourites"
-            element={
-              <FavouritesPage sessionFavs={sessionFavs} favId={favIdHandler} />
-            }
+            element={<FavouritesPage sessionFavs={sessionFavs} />}
           />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
-          <Route path="/details/*" element={<CocktailDetails />} />
+          {/* <Route path="/details/*" element={<CocktailDetails />} /> */}
           <Route
-            path="/details/:cocktail.idDrink"
-            element={<CocktailDetails />}
+            path="/cocktails/:cocktailId"
+            element={
+              <CocktailDetails
+                cocktail={clickedCocktail}
+                closeClick={closeModal}
+                favourited={favIdHandler}
+              />
+            }
           />
         </Routes>
         {/* <HomePage /> */}
