@@ -1,6 +1,5 @@
 import styles from "./RandomCocktail.module.css";
-import { CocktailDetails } from "../cocktail-details/CocktailDetails";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 export const RandomCocktail = ({ cocktail, detailsClick }) => {
   console.log(cocktail.cocktail);
   useEffect(() => {
@@ -8,7 +7,6 @@ export const RandomCocktail = ({ cocktail, detailsClick }) => {
   }, [cocktail]);
   const cocktailDetailsHandler = (cocktail) => {
     // console.log(cocktail);
-    // CocktailDetails(cocktail);
     detailsClick(cocktail);
   };
   return (

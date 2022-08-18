@@ -12,7 +12,7 @@ export const CocktailDetails = ({ cocktail, closeClick, favourited }) => {
     console.log("heart");
     favourited(cocktail.idDrink);
   };
-  console.log(favourited, "favourited");
+  // console.log(favourited, "favourited");
   return (
     <div className={styles["details-overlay"]}>
       <section

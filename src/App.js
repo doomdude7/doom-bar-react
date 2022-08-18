@@ -10,7 +10,7 @@ import { IngredientsPage } from "./components/ingredients-page/IngredientsPage";
 import { LoginForm } from "./components/login-page/LoginForm";
 import { RegisterForm } from "./components/register-page/RegisterForm";
 import { FavouritesPage } from "./components/favourites-page/FavouritesPage";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CocktailDetails } from "./components/cocktail-details/CocktailDetails";
 function App() {
   const checkLocalStorage = localStorage.getItem("ageConsent");
@@ -20,8 +20,8 @@ function App() {
     sessionFavs.find((fav) => fav === id)
       ? console.log("already in favourites")
       : setSessionFavs([...sessionFavs, id]);
+    console.log("sessionFavs state: ", sessionFavs);
   };
-  console.log("sessionFavs state: ", sessionFavs);
   return (
     <div className="App">
       {!checkLocalStorage && <AgeGateModal />}
@@ -47,11 +47,17 @@ function App() {
           />
           <Route
             path="/favourites"
-            element={<FavouritesPage sessionFavs={sessionFavs} />}
+            element={
+              <FavouritesPage sessionFavs={sessionFavs} favId={favIdHandler} />
+            }
           />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/register" element={<RegisterForm />} />
           <Route path="/details/*" element={<CocktailDetails />} />
+          <Route
+            path="/details/:cocktail.idDrink"
+            element={<CocktailDetails />}
+          />
         </Routes>
         {/* <HomePage /> */}
       </main>

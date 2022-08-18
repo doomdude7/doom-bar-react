@@ -4,7 +4,7 @@ export const CocktailCarousel = ({ cocktailSelection, detailsClick }) => {
   // console.log("cocktailSelection", cocktailSelection, "passed");
   const cocktailDetailsHandler = (cocktail) => {
     // console.log(cocktail);
-    // CocktailDetails(cocktail);
+
     detailsClick(cocktail);
   };
   return (

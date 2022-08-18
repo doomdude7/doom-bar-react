@@ -9,6 +9,7 @@ export const RandomCocktailsPage = ({ favId, alert }) => {
   const [clickedCocktail, setClickedCocktail] = useState([]);
   const [isShown, setIsShown] = useState(false);
   useEffect(() => {
+    //fetching 7 random cocktails ( max is 1 at a time for free use of the api)
     for (let i = 0; i < 7; i++) {
       getOneRandom().then((cocktail) =>
         setCocktails((prevState) => [...prevState, cocktail])

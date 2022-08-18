@@ -1,5 +1,4 @@
 import styles from "./SearchItem.module.css";
-import { useState } from "react";
 
 export const SearchItem = ({ cocktail, detailsClick }) => {
   const cocktailDetailsHandler = () => {
