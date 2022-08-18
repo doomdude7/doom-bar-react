@@ -1,5 +1,5 @@
 import "./App.module.css";
-import { Routes, Route, useNavigate, Link } from "react-router-dom";
+import { Routes, Route, useNavigate, Link, useParams } from "react-router-dom";
 import { Footer } from "./components/common/footer/Footer.js";
 import { Header } from "./components/common/header/Header.js";
 import { Cursor } from "./components/common/cursor/Cursor.js";
@@ -16,6 +16,7 @@ function App() {
   const checkLocalStorage = localStorage.getItem("ageConsent");
   const [sessionFavs, setSessionFavs] = useState([]);
   const [clickedCocktail, setClickedCocktail] = useState([]);
+
   const navigate = useNavigate();
   const clickedCocktailHandler = (cocktail) => {
     setClickedCocktail(cocktail);
@@ -31,6 +32,7 @@ function App() {
     console.log("close button", data);
     navigate(-1);
   };
+
   return (
     <div className="App">
       {!checkLocalStorage && <AgeGateModal />}
@@ -57,6 +59,15 @@ function App() {
             path="/pick-drink"
             element={
               <IngredientsPage clickedCocktail={clickedCocktailHandler} />
+            }
+          />
+          <Route
+            path="/pick-drink/:baseId"
+            element={
+              <IngredientsPage
+                clickedCocktail={clickedCocktailHandler}
+                baseId={useParams.baseId}
+              />
             }
           />
           <Route

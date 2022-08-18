@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { RandomCocktail } from "./RandomCocktail";
 import { CocktailDetails } from "../cocktail-details/CocktailDetails";
 import { useNavigate } from "react-router-dom";
-import { Route, Routes } from "react-router-dom";
+
 export const RandomCocktailsPage = ({ alert, clickedCocktail }) => {
   const navigate = useNavigate();
   const [cocktails, setCocktails] = useState([]);

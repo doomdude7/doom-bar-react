@@ -4,24 +4,28 @@ import {
   getSelection,
   getById,
 } from "../../services/cocktailFetchService";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { BaseImg } from "./pick-base-section/BaseImg";
 import { SvgContainer } from "./svg-container/SvgContainer";
 import { CocktailCarousel } from "./cocktail-carousel-section/CocktailCarousel";
 import { CocktailDetails } from "../cocktail-details/CocktailDetails";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, useParams } from "react-router-dom";
+
 export const IngredientsPage = ({ clickedCocktail }) => {
   const [baseProps, setBaseProps] = useState([]);
-  const [selectedBase, setSelectedBase] = useState("");
   const [cocktailSelection, setCocktailSelection] = useState([]);
   const navigate = useNavigate();
+  const { baseId } = useParams();
+  useEffect(() => {
+    console.log("idBase", baseId);
+    getSelection(baseId).then((data) => {
+      setCocktailSelection(data);
+    });
+  }, [baseId]);
   const selectHandler = (data) => {
-    // console.log("selectHandler", data);
-    setSelectedBase(data);
-    window.scroll({ bottom: 0, behavior: "smooth" });
+    navigate(`/pick-drink/${data}`);
   };
-  // console.log("selectedBase", selectedBase);
   useEffect(() => {
     const bases = [
       "vodka",
@@ -50,17 +54,9 @@ export const IngredientsPage = ({ clickedCocktail }) => {
     // console.log("svgHandler recieved :", data);
     detailsClick("16271");
   };
-  // console.log("state: ", svgClicked);
-  useEffect(() => {
-    getSelection(selectedBase).then((data) => {
-      setCocktailSelection(data);
-    });
-  }, [selectedBase]);
-  // console.log(cocktailSelection, "cocktailSelection");
 
   const detailsClick = (data) => {
     // console.log("dive", data);
-    // window.scroll({ top: 0, behavior: "smooth" });
     // setIsShown(true);
     console.log("detailsClick", data);
     getById(data).then((response) => {
@@ -70,6 +66,7 @@ export const IngredientsPage = ({ clickedCocktail }) => {
     });
     // console.log("isShown", isShown);
   };
+
   console.log("clickedCocktail", clickedCocktail);
   return (
     <>
@@ -86,11 +83,16 @@ export const IngredientsPage = ({ clickedCocktail }) => {
             <div className={styles["bases"]}>
               {!baseProps.props &&
                 baseProps.map((base) => (
-                  <BaseImg
+                  <Link
+                    to={{ pathname: `/pick-drink/${base.baseName}` }}
                     key={base.baseImg}
-                    baseProp={base}
-                    selectedBase={selectHandler}
-                  />
+                  >
+                    <BaseImg
+                      key={base.baseImg}
+                      baseProp={base}
+                      selectedBase={selectHandler}
+                    />
+                  </Link>
                 ))}
             </div>
           </div>
