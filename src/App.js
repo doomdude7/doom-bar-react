@@ -16,7 +16,7 @@ function App() {
   const checkLocalStorage = localStorage.getItem("ageConsent");
   const [sessionFavs, setSessionFavs] = useState([]);
   const [clickedCocktail, setClickedCocktail] = useState([]);
-
+  const [currentRandoms, setCurrentRandoms] = useState([]);
   const navigate = useNavigate();
   const clickedCocktailHandler = (cocktail) => {
     setClickedCocktail(cocktail);
@@ -32,7 +32,17 @@ function App() {
     console.log("close button", data);
     navigate(-1);
   };
+  // const refreshClickHandler = () => {
+  //   setCurrentRandoms([]);
+  //   console.log("refresh clicked");
+  //   navigate(`/random-cocktails`, { replace: true });
+  // };
+  const currentRandomsHandler = (cocktails) => {
+    console.log("currentRandomsHandler", cocktails);
+    setCurrentRandoms(cocktails);
+  };
 
+  console.log("currentRandoms", currentRandoms);
   return (
     <div className="App">
       {!checkLocalStorage && <AgeGateModal />}
@@ -52,9 +62,24 @@ function App() {
           <Route
             path="/random-cocktails"
             element={
-              <RandomCocktailsPage clickedCocktail={clickedCocktailHandler} />
+              <RandomCocktailsPage
+                clickedCocktail={clickedCocktailHandler}
+                currentRandomsList={currentRandomsHandler}
+                currentRandomsData={currentRandoms}
+              />
             }
           />
+          {/* <Route
+            path="/random-cocktails/:id"
+            element={
+              <RandomCocktailsPage
+                clickedCocktail={clickedCocktailHandler}
+                currentRandoms={currentRandomsHandler}
+                randomsData={currentRandoms}
+              />
+            }
+          /> */}
+
           <Route
             path="/pick-drink"
             element={
