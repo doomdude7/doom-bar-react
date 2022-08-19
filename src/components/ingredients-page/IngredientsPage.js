@@ -8,11 +8,10 @@ import { useEffect, useState, useRef } from "react";
 import { BaseImg } from "./pick-base-section/BaseImg";
 import { SvgContainer } from "./svg-container/SvgContainer";
 import { CocktailCarousel } from "./cocktail-carousel-section/CocktailCarousel";
-import { CocktailDetails } from "../cocktail-details/CocktailDetails";
 import React from "react";
 import { useNavigate, Link, useParams } from "react-router-dom";
 
-export const IngredientsPage = ({ clickedCocktail }) => {
+export const IngredientsPage = () => {
   const [baseProps, setBaseProps] = useState([]);
   const [cocktailSelection, setCocktailSelection] = useState([]);
   const navigate = useNavigate();
@@ -56,18 +55,10 @@ export const IngredientsPage = ({ clickedCocktail }) => {
   };
 
   const detailsClick = (data) => {
-    // console.log("dive", data);
-    // setIsShown(true);
     console.log("detailsClick", data);
-    getById(data).then((response) => {
-      console.log("response", response);
-      clickedCocktail(response);
-      navigate(`/cocktails/${response.idDrink}`);
-    });
-    // console.log("isShown", isShown);
+    navigate(`/cocktails/${data}`);
   };
 
-  console.log("clickedCocktail", clickedCocktail);
   return (
     <>
       <section

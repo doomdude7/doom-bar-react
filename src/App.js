@@ -15,12 +15,8 @@ import { CocktailDetails } from "./components/cocktail-details/CocktailDetails";
 function App() {
   const checkLocalStorage = localStorage.getItem("ageConsent");
   const [sessionFavs, setSessionFavs] = useState([]);
-  const [clickedCocktail, setClickedCocktail] = useState([]);
   const [currentRandoms, setCurrentRandoms] = useState([]);
   const navigate = useNavigate();
-  const clickedCocktailHandler = (cocktail) => {
-    setClickedCocktail(cocktail);
-  };
   const favIdHandler = (id) => {
     console.log(id, "id passed through fav handler -- app");
     sessionFavs.find((fav) => fav === id)
@@ -32,11 +28,6 @@ function App() {
     console.log("close button", data);
     navigate(-1);
   };
-  // const refreshClickHandler = () => {
-  //   setCurrentRandoms([]);
-  //   console.log("refresh clicked");
-  //   navigate(`/random-cocktails`, { replace: true });
-  // };
   const currentRandomsHandler = (cocktails) => {
     console.log("currentRandomsHandler", cocktails);
     setCurrentRandoms(cocktails);
@@ -47,7 +38,7 @@ function App() {
     <div className="App">
       {!checkLocalStorage && <AgeGateModal />}
 
-      <Header clickedCocktail={clickedCocktailHandler} />
+      <Header />
       <main>
         <Routes>
           <Route
@@ -63,37 +54,15 @@ function App() {
             path="/random-cocktails"
             element={
               <RandomCocktailsPage
-                clickedCocktail={clickedCocktailHandler}
                 currentRandomsList={currentRandomsHandler}
                 currentRandomsData={currentRandoms}
               />
             }
           />
-          {/* <Route
-            path="/random-cocktails/:id"
-            element={
-              <RandomCocktailsPage
-                clickedCocktail={clickedCocktailHandler}
-                currentRandoms={currentRandomsHandler}
-                randomsData={currentRandoms}
-              />
-            }
-          /> */}
-
-          <Route
-            path="/pick-drink"
-            element={
-              <IngredientsPage clickedCocktail={clickedCocktailHandler} />
-            }
-          />
+          <Route path="/pick-drink" element={<IngredientsPage />} />
           <Route
             path="/pick-drink/:baseId"
-            element={
-              <IngredientsPage
-                clickedCocktail={clickedCocktailHandler}
-                baseId={useParams.baseId}
-              />
-            }
+            element={<IngredientsPage baseId={useParams.baseId} />}
           />
           <Route
             path="/favourites"
@@ -106,7 +75,6 @@ function App() {
             path="/cocktails/:cocktailId"
             element={
               <CocktailDetails
-                cocktail={clickedCocktail}
                 closeClick={closeModal}
                 favourited={favIdHandler}
               />

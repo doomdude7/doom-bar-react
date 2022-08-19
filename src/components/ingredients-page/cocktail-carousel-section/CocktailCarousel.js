@@ -3,7 +3,7 @@ import React from "react";
 export const CocktailCarousel = ({ cocktailSelection, detailsClick }) => {
   // console.log("cocktailSelection", cocktailSelection, "passed");
   const cocktailDetailsHandler = (cocktail) => {
-    // console.log(cocktail);
+    console.log("clicked in carousel", cocktail);
 
     detailsClick(cocktail);
   };

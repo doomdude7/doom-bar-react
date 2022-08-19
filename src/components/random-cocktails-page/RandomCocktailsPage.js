@@ -7,7 +7,7 @@ import { CocktailDetails } from "../cocktail-details/CocktailDetails";
 import { useNavigate, Link } from "react-router-dom";
 
 export const RandomCocktailsPage = ({
-  clickedCocktail,
+  // clickedCocktail,
   currentRandomsList,
   currentRandomsData,
 }) => {
@@ -38,8 +38,8 @@ export const RandomCocktailsPage = ({
     console.log("detailsClick", data);
     // console.log("dive", data);
     navigate(`/cocktails/${data.idDrink}`);
-    clickedCocktail(data);
-    window.scroll({ top: 0, behavior: "smooth" });
+    // clickedCocktail(data);
+    // window.scroll({ top: 0, behavior: "smooth" });
     // navigate(`/cocktails/${cocktailId}`);
   };
   return (

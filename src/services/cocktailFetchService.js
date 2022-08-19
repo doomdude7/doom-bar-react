@@ -46,6 +46,7 @@ export const getById = async (id) => {
   });
   const dataJson = await data.json();
   // console.log(dataJson, "dataJson");
+  // return dataJson.drinks[0];
   return dataJson.drinks[0];
 };
 export const getByName = async (name) => {

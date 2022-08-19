@@ -2,10 +2,22 @@ import styles from "./CocktailDetails.module.css";
 import global from "../../App.module.css";
 import { CocktailDetailsIngredients } from "./CocktailDetailsIngredients";
 import { useParams, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getById } from "../../services/cocktailFetchService";
 
-export const CocktailDetails = ({ cocktail, closeClick, favourited }) => {
-  console.log("passed cocktail data", cocktail);
-
+export const CocktailDetails = ({ closeClick, favourited }) => {
+  // console.log("passed cocktail data", cocktail);
+  const { cocktailId } = useParams();
+  const [cocktail, setCocktail] = useState({});
+  console.log("coktailId ...", cocktailId);
+  useEffect(() => {
+    // const data = { cocktailId };
+    getById(cocktailId).then((cocktail) => {
+      console.log("response", cocktail);
+      return setCocktail(cocktail);
+    });
+  }, []);
+  console.log("cocktail --- ", cocktail);
   const closeDetailsHandler = () => {
     closeClick("close");
     console.log("closeDetailsHandler");
@@ -14,7 +26,7 @@ export const CocktailDetails = ({ cocktail, closeClick, favourited }) => {
     console.log("heart");
     favourited(cocktail.idDrink);
   };
-  // console.log(favourited, "favourited");
+  console.log(favourited, "favourited");
   return (
     <div className={styles["details-overlay"]}>
       <section

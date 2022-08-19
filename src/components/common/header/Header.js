@@ -3,11 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { getByName } from "../../../services/cocktailFetchService";
 import { useState } from "react";
 import { SearchItem } from "./search-item/SearchItem";
-import { CocktailDetails } from "../../cocktail-details/CocktailDetails";
-export const Header = ({ clickedCocktail }) => {
+export const Header = () => {
   const [searchCocktails, setSearchCocktails] = useState(null);
-  // const [clickedCocktail, setClickedCocktail] = useState([]);
-  // const [isShown, setIsShown] = useState(false);
   const navigate = useNavigate();
   const submitSearchHandler = (e) => {
     e.preventDefault();
@@ -28,20 +25,9 @@ export const Header = ({ clickedCocktail }) => {
   const detailsClick = (data) => {
     setSearchCocktails(null);
     console.log("detailsClick", data);
-    // console.log("dive", data);
-    // setIsShown(true);
     navigate(`/cocktails/${data.idDrink}`);
-    // console.log("isShown", isShown);
-    clickedCocktail(data);
-    window.scroll({ top: 0, behavior: "smooth" });
   };
-  // const closeModal = () => {
-  //   setIsShown(false);
-  // };
-  // const favouritedHandler = (drinkId) => {
-  //   console.log(drinkId, "passed through fav handler");
-  //   favId(drinkId);
-  // };
+
   return (
     <>
       <header>
