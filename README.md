@@ -21,11 +21,11 @@ This project is currently still in development. There are a bunch of ideas left 
 
 - Have "node" and "npm" installed.
 - Clone this repository.
-- run "npm install"
-- run "start server"
-- visit "localhost:3000"
+- run `npm install`
+- run `start server`
+- visit `localhost:3000`
 
 ## Conclusion
 
 This is my first app that i built using react and I must say that I loved working with this technology and plan to continue improving my skills, while developing my other project ideas also using react. I plan to come back to this project in the very near future to implement some of the missing functionality (that I didn't have enough time for before the deadline) and also to improve the current design and feel of the app. Although I am pleased with my work on this project, I can still envision it being much better and I am motivated to continue working on it until I reach that state, where I've implemented all my ideas for this project.
-To conclude, I think working on this project for the past few weeks has been very productive, because I learned a lot of new things and got a lot of valuable pratice on writing react code. I will definitely be using react for a lot of my projects from now on!
+To conclude, I think working on this project for the past few weeks has been very productive, as I learned a lot of new things and got a lot of valuable pratice on writing react code. I will definitely be using react for a lot of my projects from now on!
