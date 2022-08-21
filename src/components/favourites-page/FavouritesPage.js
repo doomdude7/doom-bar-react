@@ -39,7 +39,6 @@ export const FavouritesPage = ({ sessionFavs }) => {
         ) : (
           <div className={`${styles["favourites-list"]}`}>
             {favouritesDuplicateFilter &&
-              // (console.log(favourites, "favourites ....."),
               favouritesDuplicateFilter.map((fav, index) => {
                 // console.log("fav returned obj", fav);
                 return (

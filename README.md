@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+## Project Name & Idea
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### Doom's Bar
 
-## Available Scripts
+Doom's Bar is a Single-page application built with React, Javascript and CSS, that has educational and entertainment purposes. The app lets you browse through hundreds of cocktail recipes, filter them by base ingredient and to select favourite recipes and save them for later. The project uses "https://www.thecocktaildb.com/api.php" to draw data for the cocktail recipes and Firebase for email/password authentication. Client-side Routing is implemented using the react Router library. I picked the name for the app from my nickname and seeing how I'd like to own a bar someday.. this is almost like a dream comming true. :]
 
-In the project directory, you can run:
+#### Disclaimer: I do not condone
 
-### `npm start`
+## Project Status & Future Ideas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project is currently still in development. There are a bunch of ideas left to implement, which will have to be done in my free time due to the deadline approaching.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Add a custom alert modal component - for messages like: "Cocktail already addded to favourites", etc.
+- Add a Cursor buddy component - to add to a more aesthetic appeal to the user experience
+- Add a comment section to each cocktail recipe- all users can see comments but only users who are logged in can create/update/delete their owm comments
+- Add a saved section in profile page - users can choose to save their favourite recepies session in their account, so it can be loaded whenever they log in (currently only saving favourites in state, available for all users)
 
-### `npm test`
+## Installation and Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### To run this app you need to :
 
-### `npm run build`
+- Have "node" and "npm" installed.
+- Clone this repository.
+- run "npm install"
+- run "start server"
+- visit "localhost:3000"
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Conclusion
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is my first app that i built using react and I must say that I loved working with this technology and plan to continue improving my skills, while developing my other project ideas also using react. I plan to come back to this project in the very near future to implement some of the missing functionality (that I didn't have enough time for before the deadline) and also to improve the current design and feel of the app. Although I am pleased with my work on this project, I can still envision it being much better and I am motivated to continue working on it until I reach that state, where I've implemented all my ideas for this project.
+To conclude, I think working on this project for the past few weeks has been very productive, because I learned a lot of new things and got a lot of valuable pratice on writing react code. I will definitely be using react for a lot of my projects from now on!

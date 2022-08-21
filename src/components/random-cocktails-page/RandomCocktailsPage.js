@@ -3,8 +3,7 @@ import global from "../../App.module.css";
 import { getOneRandom } from "../../services/cocktailFetchService";
 import { useState, useEffect } from "react";
 import { RandomCocktail } from "./RandomCocktail";
-import { CocktailDetails } from "../cocktail-details/CocktailDetails";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const RandomCocktailsPage = ({
   // clickedCocktail,
@@ -36,11 +35,7 @@ export const RandomCocktailsPage = ({
 
   const detailsClick = (data) => {
     console.log("detailsClick", data);
-    // console.log("dive", data);
     navigate(`/cocktails/${data.idDrink}`);
-    // clickedCocktail(data);
-    // window.scroll({ top: 0, behavior: "smooth" });
-    // navigate(`/cocktails/${cocktailId}`);
   };
   return (
     <>
