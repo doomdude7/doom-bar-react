@@ -17,9 +17,11 @@ export const RandomCocktailsPage = ({
   console.log("cocktails", cocktails);
   useEffect(() => {
     currentRandomsList(cocktails);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cocktails]);
 
   console.log("currentRandoms", currentRandomsList);
+
   useEffect(() => {
     //fetching 7 random cocktails ( max is 1 at a time for free use of the api)
     if (currentRandomsData.length === 0) {
@@ -31,6 +33,7 @@ export const RandomCocktailsPage = ({
     } else {
       setCocktails(currentRandomsData);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const detailsClick = (data) => {
