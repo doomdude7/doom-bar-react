@@ -4,7 +4,7 @@
 
 Doom's Bar is a Single-page application built with React, Javascript and CSS, that has educational and entertainment purposes. The app lets you browse through hundreds of cocktail recipes, filter them by base ingredient and to select favourite recipes and save them for later. The project uses "https://www.thecocktaildb.com/api.php" to draw data for the cocktail recipes and Firebase for email/password authentication. Client-side Routing is implemented using the react Router library. I picked the name for the app from my nickname and seeing how I'd like to own a bar someday.. this is almost like a dream comming true. :]
 
-#### Disclaimer: I do not condone
+#### Disclaimer: I do not condone underage drinking!
 
 ## Project Status & Future Ideas
 
