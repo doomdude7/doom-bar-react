@@ -3,9 +3,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { getByName } from "../../../services/cocktailFetchService";
 import { useState } from "react";
 import { SearchItem } from "./search-item/SearchItem";
+import { useAuth } from "../../../firebase/firebase";
 export const Header = () => {
   const [searchCocktails, setSearchCocktails] = useState(null);
   const navigate = useNavigate();
+  const currentUser = useAuth();
   const submitSearchHandler = (e) => {
     e.preventDefault();
     const inputValue = e.target.value;
@@ -21,7 +23,7 @@ export const Header = () => {
       });
   };
   console.log(searchCocktails, "searchCocktails");
-
+  // console.log("currentUser", currentUser);
   const detailsClick = (data) => {
     setSearchCocktails(null);
     console.log("detailsClick", data);
@@ -52,38 +54,42 @@ export const Header = () => {
             onClick={submitSearchHandler}
           />
         </nav>
-        <div className="auth-buttons-container">
-          <Link to="/login">
-            <button
-              id="cursor-trigger-btn"
-              className={`${styles["auth-button"]}`}
-            >
-              Login
-            </button>
-          </Link>
-          <Link to="/register">
-            <button
-              id="cursor-trigger-btn"
-              className={`${styles["auth-button"]}`}
-            >
-              Register
-            </button>
-          </Link>
-        </div>
+        {!currentUser && (
+          <div className="auth-buttons-container">
+            <Link to="/login">
+              <button
+                id="cursor-trigger-btn"
+                className={`${styles["auth-button"]}`}
+              >
+                Login
+              </button>
+            </Link>
+            <Link to="/register">
+              <button
+                id="cursor-trigger-btn"
+                className={`${styles["auth-button"]}`}
+              >
+                Register
+              </button>
+            </Link>
+          </div>
+        )}
+        {currentUser && (
+          <div className="auth-buttons-container">
+            <Link to="/profile">
+              <button
+                id="cursor-trigger-btn"
+                className={`${styles["auth-button"]}`}
+              >
+                My Profile
+              </button>
+            </Link>
+          </div>
+        )}
       </header>
-      {/* {isShown && (
-        <CocktailDetails
-          cocktail={clickedCocktail}
-          closeClick={closeModal}
-          favourited={favouritedHandler}
-        />
-      )} */}
+
       {!searchCocktails == [] && (
-        <div
-          className={styles["search-results-container"]}
-          // onBlur={() => setSearchCocktails(null)}
-          // onMouseLeave={() => setSearchCocktails(null)}
-        >
+        <div className={styles["search-results-container"]}>
           <button
             className={styles["close-search-results"]}
             onClick={() => setSearchCocktails(null)}

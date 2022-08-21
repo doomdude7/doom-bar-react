@@ -1,5 +1,5 @@
 import "./App.module.css";
-import { Routes, Route, useNavigate, useParams } from "react-router-dom";
+import { Routes, Route, useNavigate, Link, useParams } from "react-router-dom";
 import { Footer } from "./components/common/footer/Footer.js";
 import { Header } from "./components/common/header/Header.js";
 import { Cursor } from "./components/common/cursor/Cursor.js";
@@ -12,11 +12,13 @@ import { RegisterForm } from "./components/register-page/RegisterForm";
 import { FavouritesPage } from "./components/favourites-page/FavouritesPage";
 import { useState, useEffect } from "react";
 import { CocktailDetails } from "./components/cocktail-details/CocktailDetails";
+import { signOutFunc } from "./firebase/firebase.js";
 import { UserProfile } from "./components/profile-page/UserProfile";
 function App() {
   const checkLocalStorage = localStorage.getItem("ageConsent");
   const [sessionFavs, setSessionFavs] = useState([]);
   const [currentRandoms, setCurrentRandoms] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
   const navigate = useNavigate();
   const favIdHandler = (id) => {
     console.log(id, "id passed through fav handler -- app");
@@ -33,13 +35,22 @@ function App() {
     console.log("currentRandomsHandler", cocktails);
     setCurrentRandoms(cocktails);
   };
-
+  const loggedInUserHandler = (currentUser) => {
+    console.log("loggedInUserHandler", currentUser);
+    setCurrentUser(currentUser);
+  };
+  const signOutClickedHandler = () => {
+    signOutFunc().then(() => {
+      console.log("successfully signed out");
+    });
+    setCurrentUser(null);
+  };
   console.log("currentRandoms", currentRandoms);
   return (
     <div className="App">
       {!checkLocalStorage && <AgeGateModal />}
 
-      <Header />
+      <Header currentUser={currentUser} />
       <main>
         <Routes>
           <Route
@@ -70,11 +81,20 @@ function App() {
             element={<FavouritesPage sessionFavs={sessionFavs} />}
           />
           <Route path="/login" element={<LoginForm />} />
-          <Route path="/register" element={<RegisterForm />} />
+          <Route
+            path="/register"
+            element={<RegisterForm loggedInUser={loggedInUserHandler} />}
+          />
           <Route
             path="/profile"
-            element={<UserProfile sessionFavs={sessionFavs} />}
+            element={
+              <UserProfile
+                currentUser={currentUser}
+                signOutClicked={signOutClickedHandler}
+              />
+            }
           />
+          {/* <Route path="/details/*" element={<CocktailDetails />} /> */}
           <Route
             path="/cocktails/:cocktailId"
             element={
@@ -85,7 +105,9 @@ function App() {
             }
           />
         </Routes>
+        {/* <HomePage /> */}
       </main>
+      {/* <Footer /> */}
       <Cursor />
     </div>
   );

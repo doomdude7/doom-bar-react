@@ -25,7 +25,7 @@ export const FavouritesPage = ({ sessionFavs }) => {
   const favouritesDuplicateFilter = [
     ...new Map(favourites.map((item) => [JSON.stringify(item), item])).values(),
   ];
-  // console.log("favouritesDuplicateFilter", favouritesDuplicateFilter);
+  console.log("favouritesDuplicateFilter", favouritesDuplicateFilter);
   return (
     <>
       <section
