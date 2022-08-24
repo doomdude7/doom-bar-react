@@ -14,7 +14,8 @@ export const Header = () => {
     e.preventDefault();
     const inputValue = e.target.value;
     console.log(inputValue);
-    !inputValue == " " &&
+
+    !inputValue == " " && // eslint-disable-line eqeqeq
       getByName(inputValue).then((data) => {
         // console.log(data, "data");
         if (data === null) {
@@ -102,7 +103,7 @@ export const Header = () => {
         </div>
       </header>
 
-      {!searchCocktails == [] && (
+      {!searchCocktails == [] && ( // eslint-disable-line eqeqeq
         <div className={styles["search-results-container"]}>
           <button
             className={styles["close-search-results"]}
