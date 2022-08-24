@@ -1,6 +1,6 @@
 import styles from "./LoginForm.module.css";
 import global from "./../../App.module.css";
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { useAuth, logIn } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 export const LoginForm = () => {

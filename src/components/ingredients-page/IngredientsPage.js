@@ -1,10 +1,6 @@
 import styles from "./IngredientsPage.module.css";
-import {
-  getBases,
-  getSelection,
-  getById,
-} from "../../services/cocktailFetchService";
-import { useEffect, useState, useRef } from "react";
+import { getBases, getSelection } from "../../services/cocktailFetchService";
+import { useEffect, useState } from "react";
 import { BaseImg } from "./pick-base-section/BaseImg";
 import { SvgContainer } from "./svg-container/SvgContainer";
 import { CocktailCarousel } from "./cocktail-carousel-section/CocktailCarousel";

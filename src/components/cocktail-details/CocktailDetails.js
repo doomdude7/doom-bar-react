@@ -1,7 +1,7 @@
 import styles from "./CocktailDetails.module.css";
 import global from "../../App.module.css";
 import { CocktailDetailsIngredients } from "./CocktailDetailsIngredients";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getById } from "../../services/cocktailFetchService";
 

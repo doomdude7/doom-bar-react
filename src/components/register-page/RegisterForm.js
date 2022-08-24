@@ -1,6 +1,6 @@
 import styles from "./RegisterForm.module.css";
 import global from "./../../App.module.css";
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { signUp, useAuth } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 export const RegisterForm = () => {

@@ -10,7 +10,7 @@ import { IngredientsPage } from "./components/ingredients-page/IngredientsPage";
 import { LoginForm } from "./components/login-page/LoginForm";
 import { RegisterForm } from "./components/register-page/RegisterForm";
 import { FavouritesPage } from "./components/favourites-page/FavouritesPage";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { CocktailDetails } from "./components/cocktail-details/CocktailDetails";
 import { UserProfile } from "./components/profile-page/UserProfile";
 function App() {
