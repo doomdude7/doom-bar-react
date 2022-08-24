@@ -16,7 +16,7 @@ export const CocktailDetails = ({ closeClick, favourited }) => {
       console.log("response", cocktail);
       return setCocktail(cocktail);
     });
-  }, []);
+  }, [cocktailId]);
   console.log("cocktail --- ", cocktail);
   const closeDetailsHandler = () => {
     closeClick("close");
