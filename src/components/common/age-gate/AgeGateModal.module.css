@@ -24,7 +24,7 @@
 .age-gate-container {
   display: flex;
   width: 50vw;
-  height: 80vh;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -73,4 +73,32 @@
 #age-gate-btn-no {
   background-color: rgb(211, 95, 95);
   cursor: pointer;
+}
+@media screen and (max-width: 750px) {
+  .age-gate-container {
+    width: 80vw;
+  }
+  .age-gate-text-welcome {
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+  }
+  .age-gate-container p {
+    font-size: 1.7rem;
+  }
+  .age-gate-text-question {
+    font-size: 2rem;
+    width: 23rem;
+    text-align: center;
+  }
+  .age-gate-container button {
+    padding: 0.5rem;
+  }
+  .question-button-container {
+    display: flex;
+  }
+}
+@media screen and (max-width: 359px) {
+  .age-gate-text-question {
+    font-size: 1.7rem;
+  }
 }
