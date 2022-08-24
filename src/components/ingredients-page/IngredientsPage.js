@@ -86,10 +86,7 @@ export const IngredientsPage = () => {
         </div>
         <div className={styles["ingredients-page-bottom-part"]}>
           <div className={styles["cocktail-list"]}>
-            <CocktailCarousel
-              cocktailSelection={cocktailSelection}
-              detailsClick={detailsClick}
-            />
+            <CocktailCarousel cocktailSelection={cocktailSelection} />
           </div>
         </div>
       </section>

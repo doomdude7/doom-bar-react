@@ -1,7 +1,6 @@
 .ingredients-page {
   height: 100vh;
   width: 100vw;
-  overflow-x: hidden;
 }
 .ingredients-page-top-part {
   height: 100vh;
@@ -94,36 +93,26 @@
     top: 235vh;
   }
 }
-@media screen and (max-width: 616px) {
+@media screen and (max-width: 1046px) {
   .cocktail-list {
-    top: 380vh;
+    top: 160vh;
+  }
+}
+
+@media screen and (max-width: 816px) {
+  .cocktail-list {
+    top: 280vh;
   }
   .cocktail-list {
     row-gap: 0.2rem;
   }
 }
-@media screen and (max-height: 800px) {
+
+@media screen and (max-width: 616px) {
   .cocktail-list {
-    top: 390vh;
+    top: 450vh;
   }
-}
-@media screen and (max-height: 770px) {
   .cocktail-list {
-    top: 410vh;
-  }
-}
-@media screen and (max-height: 720px) {
-  .cocktail-list {
-    top: 440vh;
-  }
-}
-@media screen and (max-height: 660px) {
-  .cocktail-list {
-    top: 470vh;
-  }
-}
-@media screen and (max-height: 620px) {
-  .cocktail-list {
-    top: 490vh;
+    row-gap: 0.2rem;
   }
 }

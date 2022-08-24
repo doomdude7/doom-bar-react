@@ -36,10 +36,6 @@ export const RandomCocktailsPage = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const detailsClick = (data) => {
-    console.log("detailsClick", data);
-    navigate(`/cocktails/${data.idDrink}`);
-  };
   return (
     <>
       <section
@@ -56,7 +52,6 @@ export const RandomCocktailsPage = ({
               <RandomCocktail
                 key={index + cocktail.idDrink}
                 cocktail={cocktail}
-                detailsClick={detailsClick}
               />
             ))}
         </div>
