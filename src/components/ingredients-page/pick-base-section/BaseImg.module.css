@@ -1,22 +1,21 @@
 .base-container {
-  width: 10vw;
-  height: 10vh;
+  width: 10rem;
+  height: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .base-container-title {
-  transform: translate(0%, 220%);
   font-size: 2rem;
   text-align: center;
-  justify-content: center;
-  width: 10vw;
+  transform: translateY(300%);
+  width: 8rem;
   color: white;
 }
 .base-container-img {
   filter: drop-shadow(0rem 0rem 3rem rgb(91, 27, 97));
-  transform: scale(0.45) translate(0%, 20%);
+  transform: scale(0.45) translateY(30%);
   z-index: 3;
 }
 .base-container:hover {

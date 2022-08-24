@@ -1,7 +1,7 @@
 import styles from "./LoginForm.module.css";
 import global from "./../../App.module.css";
 import { useEffect, useState, useRef } from "react";
-import { signUp, useAuth, logOut, logIn } from "../../firebase/firebase";
+import { useAuth, logIn } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 export const LoginForm = () => {
   const emailRef = useRef();
@@ -21,15 +21,7 @@ export const LoginForm = () => {
 
     setLoading(false);
   };
-  const logOutHandler = async () => {
-    setLoading(true);
-    try {
-      await logOut();
-    } catch (error) {
-      alert("Error signing out");
-    }
-    setLoading(false);
-  };
+
   return (
     <>
       {!currentUser && (

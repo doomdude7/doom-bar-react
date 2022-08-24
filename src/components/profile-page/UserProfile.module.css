@@ -20,9 +20,9 @@
   top: 32%;
 }
 .profile-button {
-  width: 10vw;
-  height: 5vh;
-  margin-bottom: 2rem;
+  width: 8rem;
+  height: 2.5rem;
+  margin-bottom: 3rem;
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
@@ -31,4 +31,7 @@
   background: linear-gradient(0deg, #3a1845, #404040);
   box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.5);
   cursor: pointer;
+}
+.profile-button-label {
+  margin-top: 5rem;
 }

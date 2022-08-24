@@ -29,3 +29,18 @@
   position: absolute;
   transform: scale(0.8) Translate(570%, 185%);
 }
+@media screen and (max-width: 1246px) {
+  .svg-container {
+    left: 0;
+    top: 30%;
+
+    transform: scale(0.5);
+  }
+}
+@media screen and (max-width: 846px) {
+  .svg-container {
+    left: 16%;
+    top: 10%;
+    transform: scale(0.5);
+  }
+}

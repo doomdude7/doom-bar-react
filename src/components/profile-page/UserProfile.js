@@ -39,7 +39,9 @@ export const UserProfile = ({ sessionFavs }) => {
           <h2 className={styles["profile-section-email"]}>
             Email: {currentUser?.email}
           </h2>
-          <h3>Save Favourites session</h3>
+          <h3 className={styles["profile-button-label"]}>
+            Save Favourites session
+          </h3>
           <button
             className={styles["profile-button"]}
             disabled={loading}
