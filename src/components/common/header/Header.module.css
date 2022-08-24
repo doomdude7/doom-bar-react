@@ -230,6 +230,9 @@ header nav a {
     width: 40vw;
     transform: translate(80%, 45%);
   }
+  .search-results-list {
+    width: 40vw;
+  }
 }
 @media screen and (max-width: 464px) {
   .header-nav {

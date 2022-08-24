@@ -1,10 +1,11 @@
 .cocktail-instructions {
   display: flex;
+
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0rem 2rem;
-  height: 60vh;
+  min-height: 70vh;
   width: 50vw;
   /* overflow-y: visible; */
 }
@@ -29,6 +30,10 @@
   font-size: 1.8rem;
   display: flex;
   color: #893ca3;
+  background-color: rgba(137, 60, 163, 0.1);
+  padding: 0.2rem 3rem;
+  border-radius: 0.7rem;
+  -webkit-text-stroke: 0.2px white;
 }
 .ingredients-item-sub,
 .ingredients-item-main {
@@ -45,4 +50,9 @@
   font-size: 3rem;
   color: #893ca3;
   text-shadow: 0rem 0.5rem 0.7rem rgba(234, 226, 236, 0.15);
+}
+@media screen and (min-width: 681) {
+  .ingredients-list {
+    min-width: 80vw;
+  }
 }

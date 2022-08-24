@@ -57,10 +57,16 @@ export const CocktailDetailsIngredients = ({ cocktail }) => {
   const ingredientsItems = ingredientsList.map((ingredient, index) => {
     const measure = measuresList[index];
     return (
-      <li key={ingredient + index} className={`${styles["ingredients-item"]}`}>
-        {measure}
-        {ingredient}
-      </li>
+      <>
+        <li
+          key={ingredient + index}
+          className={`${styles["ingredients-item"]}`}
+        >
+          {measure}
+          {ingredient}
+        </li>
+        <hr width="100%" color="cyan" size="1px" />
+      </>
     );
   });
   console.log("measures", measures);

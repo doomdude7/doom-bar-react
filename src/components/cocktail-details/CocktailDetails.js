@@ -44,7 +44,6 @@ export const CocktailDetails = ({ closeClick, favourited }) => {
         >
           ❤
         </button>
-
         <div className={`${styles["cocktail-details"]}`}>
           <h1
             className={`${styles["cocktails-details-title"]}`}
@@ -56,6 +55,7 @@ export const CocktailDetails = ({ closeClick, favourited }) => {
             {`${cocktail.strAlcoholic}`}
           </h3>
         </div>
+
         <div className={`${styles["cocktail-preview-and-instructions"]}`}>
           <div className={`${styles["cocktail-preview"]}`}>
             <img
