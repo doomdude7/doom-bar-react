@@ -6,10 +6,7 @@ export const RandomCocktail = ({ cocktail, detailsClick }) => {
   useEffect(() => {
     console.log("cocktail", cocktail);
   }, [cocktail]);
-  const cocktailDetailsHandler = (cocktail) => {
-    // console.log(cocktail);
-    detailsClick(cocktail);
-  };
+
   return (
     <Link to={{ pathname: `/cocktails/${cocktail.idDrink}` }}>
       <div className={`${styles["random-cocktail"]}`}>

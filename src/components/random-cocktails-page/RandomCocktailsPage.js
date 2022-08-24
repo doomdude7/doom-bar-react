@@ -3,15 +3,12 @@ import global from "../../App.module.css";
 import { getOneRandom } from "../../services/cocktailFetchService";
 import { useState, useEffect } from "react";
 import { RandomCocktail } from "./RandomCocktail";
-import { useNavigate } from "react-router-dom";
 
 export const RandomCocktailsPage = ({
   // clickedCocktail,
   currentRandomsList,
   currentRandomsData,
 }) => {
-  const navigate = useNavigate();
-
   const [cocktails, setCocktails] = useState([]);
   // const [clickedCocktail, setClickedCocktail] = useState([]);
   console.log("cocktails", cocktails);
