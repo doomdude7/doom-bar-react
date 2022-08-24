@@ -40,11 +40,11 @@ export const LoginForm = () => {
           <form id="login-form" className={styles["login-form"]}>
             <h1 className={styles["login-form-title"]}>Login</h1>
             <ul className={styles["login-form-list"]}>
-              <li>
+              <li className={styles["list-item"]}>
                 <label htmlFor="email">Email:</label>
                 <input ref={emailRef} type="text" id="email" name="email" />
               </li>
-              <li>
+              <li className={styles["list-item"]}>
                 <label htmlFor="password">Password:</label>
                 <input
                   ref={passwordRef}

@@ -46,11 +46,10 @@ export const RandomCocktailsPage = ({
         id="cocktail-page"
         className={`${styles["cocktail-page"]} ${global["content"]}`}
       >
-        <div className={`${styles["cocktail-page-section"]}`}>
-          <h1 className={`${styles["cocktail-page-title"]}`}>
-            Random cocktails section:
-          </h1>
-        </div>
+        <h1 className={`${styles["cocktail-page-title"]}`}>
+          Random cocktails section:
+        </h1>
+
         <div className={`${styles["cocktail-container"]}`}>
           {cocktails &&
             cocktails.map((cocktail, index) => (

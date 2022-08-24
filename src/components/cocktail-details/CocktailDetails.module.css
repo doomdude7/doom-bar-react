@@ -30,7 +30,8 @@
   top: 15vh;
   right: 2rem;
   width: 4rem;
-  height: 3rem;
+  font-size: 1.5rem;
+  height: 3.5rem;
   background-color: #893ca3;
   color: white;
   border-radius: 0.5rem;
@@ -62,8 +63,6 @@
   background: none;
 }
 .close-cocktail-details:hover {
-  width: 4.2rem;
-  height: 3.2rem;
   border-color: whitesmoke;
   border-style: double;
   border-width: 0.5rem;
@@ -139,13 +138,19 @@
   .heart-cocktail-details {
     top: 25vh;
   }
+  .glass-type {
+    transform: translateY(-70%);
+    color: #9868a8;
+    background-color: rgba(61, 61, 61, 0.8);
+    margin-bottom: 0.5rem;
+  }
 }
 @media screen and (max-width: 580px) {
   .cocktail-preview-img {
     transform: scale(1);
   }
   .glass-type {
-    transform: translateY(5%);
+    transform: translateY(-60%);
   }
 }
 @media screen and (max-width: 458px) {

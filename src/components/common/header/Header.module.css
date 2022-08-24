@@ -1,7 +1,6 @@
 /* header section  */
 header {
   position: fixed;
-  height: 10vh;
   width: 100vw;
   padding: 0rem 2rem;
   display: flex;
@@ -228,7 +227,7 @@ header nav a {
   }
   .search-results-container {
     width: 40vw;
-    transform: translate(80%, 45%);
+    transform: translate(80%, 48%);
   }
   .search-results-list {
     width: 40vw;
@@ -256,5 +255,10 @@ header nav a {
   }
   .search-results-list {
     width: 60vw;
+  }
+}
+@media screen and (max-width: 350px) {
+  .logo {
+    transform: translateX(-20%);
   }
 }

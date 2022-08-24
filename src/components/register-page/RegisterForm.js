@@ -36,11 +36,11 @@ export const RegisterForm = () => {
           >
             <h1 className={styles["register-form-title"]}>Register</h1>
             <ul className={styles["register-form-list"]}>
-              <li>
+              <li className={styles["list-item"]}>
                 <label htmlFor="email">Email:</label>
                 <input ref={emailRef} type="email" id="email" name="email" />
               </li>
-              <li>
+              <li className={styles["list-item"]}>
                 <label htmlFor="password">Password:</label>
                 <input
                   ref={passwordRef}

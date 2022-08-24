@@ -135,6 +135,9 @@ export const Header = () => {
             column-gap: 1.5rem;
             padding: 0.5rem 1rem;
           }
+          header {
+            height: ${hamburgerOpen ? `auto` : `5rem`};
+          }
         }
       `}</style>
     </>

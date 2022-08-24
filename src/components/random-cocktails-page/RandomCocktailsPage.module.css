@@ -1,11 +1,9 @@
 .cocktail-page {
-  position: relative;
-  justify-content: center;
-  height: 120vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .cocktail-container {
-  position: absolute;
-  top: 20vh;
   height: 115vh;
   width: 80vw;
   border-radius: 1.5rem;
@@ -15,19 +13,18 @@
   justify-content: space-evenly;
   padding: 1rem;
 }
-.cocktail-page-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  transform: translate(0%, 120%);
-  width: 50vw;
-}
+
 .cocktail-page-title {
+  margin-top: 5rem;
   font-size: 4.3rem;
   color: #6b2c80;
-  margin-bottom: 1rem;
+  padding: 0rem 1rem;
   text-align: center;
   -webkit-text-stroke: 0.7px whitesmoke;
-  text-shadow: 2px 2px 20px whitesmoke, 10px 10px 30px black;
+  text-shadow: 2px 2px 5px whitesmoke, 10px 10px 30px black;
+}
+@media screen and (max-width: 496px) {
+  .cocktail-page-title {
+    font-size: 3.5rem;
+  }
 }

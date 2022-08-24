@@ -3,12 +3,13 @@
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  margin: 1.5rem 2rem;
 }
 .random-cocktail-img {
   border-radius: 1rem;
   border: 0.5rem solid #6b2c80;
   margin: 0rem 1rem;
-  width: 15vw;
+  width: calc(13rem + 3vw);
   box-shadow: 0rem 0rem 3.5rem rgba(198, 185, 202, 0.8);
   z-index: 3;
 }
