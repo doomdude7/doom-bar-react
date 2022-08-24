@@ -1,0 +1,36 @@
+.hamburger {
+  position: absolute;
+  top: 0.8rem;
+  right: 5rem;
+  width: 4rem;
+  height: 3.8rem;
+  display: none;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  z-index: 10;
+  border-radius: 1rem;
+  border: 5.5px double white;
+  transform: scale(0.8);
+}
+.burger {
+  width: 2.5rem;
+  height: 0.25rem;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  transform-origin: 1px;
+  transition: all 0.3s linear;
+}
+@media screen and (max-width: 1430px) {
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: space-eve;
+    padding: 0.9rem 0rem;
+    z-index: 10;
+  }
+}
+@media screen and (max-width: 430px) {
+  .hamburger {
+    right: 1.5rem;
+  }
+}

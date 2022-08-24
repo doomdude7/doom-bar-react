@@ -4,8 +4,10 @@ import { getByName } from "../../../services/cocktailFetchService";
 import { useState } from "react";
 import { SearchItem } from "./search-item/SearchItem";
 import { useAuth } from "../../../firebase/firebase";
+import { Hamburger } from "./Hamburger";
 export const Header = () => {
   const [searchCocktails, setSearchCocktails] = useState(null);
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
   const navigate = useNavigate();
   const currentUser = useAuth();
   const submitSearchHandler = (e) => {
@@ -30,62 +32,74 @@ export const Header = () => {
     navigate(`/cocktails/${data.idDrink}`);
   };
 
+  const hamburgerHandler = () => {
+    setHamburgerOpen(!hamburgerOpen);
+    console.log("click");
+  };
+  console.log("hamburgerOpen", hamburgerOpen);
   return (
     <>
       <header>
-        <Link to="/">
-          <h2 className={styles["logo"]}>Doom's Bar</h2>
-        </Link>
-        <nav>
-          <Link to="/random-cocktails">
-            <h3 className={styles["nav-option"]}>Random drinks</h3>
+        <div className={styles["logo-container"]}>
+          <Link to="/">
+            <h2 className={styles["logo"]}>Doom's Bar</h2>
           </Link>
-          <Link to="/pick-drink">
-            <h3 className={styles["nav-option"]}>Pick a drink</h3>
-          </Link>
-          <Link to="/favourites">
-            <h3 className={styles["nav-option"]}>Favourites</h3>
-          </Link>
-          <input
-            type="input"
-            placeholder="Search cocktails"
-            className={styles["search-field"]}
-            onChange={submitSearchHandler}
-            onClick={submitSearchHandler}
-          />
-        </nav>
-        {!currentUser && (
-          <div className="auth-buttons-container">
-            <Link to="/login">
-              <button
-                id="cursor-trigger-btn"
-                className={`${styles["auth-button"]}`}
-              >
-                Login
-              </button>
-            </Link>
-            <Link to="/register">
-              <button
-                id="cursor-trigger-btn"
-                className={`${styles["auth-button"]}`}
-              >
-                Register
-              </button>
-            </Link>
+          <div className={styles["hamburger-menu"]} onClick={hamburgerHandler}>
+            <Hamburger />
           </div>
-        )}
-        {currentUser && (
-          <div className="auth-buttons-container">
-            <Link to="/profile">
-              <button
-                id="cursor-trigger-btn"
-                className={`${styles["auth-button"]}`}
-              >
-                My Profile
-              </button>
+        </div>
+        <div className="menu">
+          <nav className={styles["header-nav"]}>
+            <Link to="/random-cocktails">
+              <h3 className={styles["nav-option"]}>Random drinks</h3>
             </Link>
-          </div>
-        )}
+            <Link to="/pick-drink">
+              <h3 className={styles["nav-option"]}>Pick a drink</h3>
+            </Link>
+            <Link to="/favourites">
+              <h3 className={styles["nav-option"]}>Favourites</h3>
+            </Link>
+            <input
+              type="input"
+              placeholder="Search cocktails"
+              className={styles["search-field"]}
+              onChange={submitSearchHandler}
+              onClick={submitSearchHandler}
+            />
+          </nav>
+          {!currentUser && (
+            <div className={styles["auth-buttons-container"]}>
+              <Link to="/login">
+                <button
+                  id="cursor-trigger-btn"
+                  className={`${styles["auth-button"]}`}
+                >
+                  Login
+                </button>
+              </Link>
+              <Link to="/register">
+                <button
+                  id="cursor-trigger-btn"
+                  className={`${styles["auth-button"]}`}
+                >
+                  Register
+                </button>
+              </Link>
+            </div>
+          )}
+          {currentUser && (
+            <div className={styles["auth-buttons-container"]}>
+              <Link to="/profile">
+                <button
+                  id="cursor-trigger-btn"
+                  className={`${styles["auth-button"]}`}
+                >
+                  My Profile
+                </button>
+              </Link>
+            </div>
+          )}
+        </div>
       </header>
 
       {!searchCocktails == [] && (
@@ -107,6 +121,22 @@ export const Header = () => {
           </div>
         </div>
       )}
+      <style jsx="true">{`
+        .menu {
+          display: flex;
+        }
+        @media (max-width: 1430px) {
+          .menu {
+            display: ${hamburgerOpen ? `flex` : `none`};
+            width: 100vw;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            column-gap: 1.5rem;
+            padding: 0.5rem 1rem;
+          }
+        }
+      `}</style>
     </>
   );
 };

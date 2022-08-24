@@ -20,7 +20,18 @@
   color: white;
 }
 .search-item-img {
-  width: 80%;
-  height: 80%;
+  max-width: 80%;
+  max-height: 80%;
   border-radius: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .search-item {
+    width: 30vw;
+  }
+}
+@media screen and (max-width: 464px) {
+  .search-item {
+    width: 40vw;
+  }
 }
