@@ -8,7 +8,7 @@ export const HomePage = () => {
         id="landing-page"
         className={`${styles["landing-page"]} ${globalStyles["content"]}`}
       ></section>
-      <section className={styles.greeting}>
+      <section className={styles["greeting"]}>
         <img src={sunsetImg} alt="beers at sunset" />
         <div className={`${styles["greeting-text-container"]}`}>
           <h1 className={`${styles["greeting-title"]}`}>

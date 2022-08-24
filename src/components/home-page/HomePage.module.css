@@ -5,6 +5,7 @@
   width: 100vw;
   padding: 2rem;
   align-items: center;
+  flex-direction: row;
   background: linear-gradient(0deg, #1c1c1c, #202020, #3a1845);
 }
 
@@ -49,7 +50,53 @@
 
 /* landing page  */
 .landing-page {
+  height: 100vh;
   background-image: url(./assets/doom-bar.jpg);
   background-size: cover;
   background-position: center;
+}
+@media screen and (max-width: 1135px) {
+  .greeting {
+    flex-direction: column-reverse;
+  }
+  .greeting img {
+    margin-bottom: 2.5rem;
+    height: 80vh;
+    width: 50vw;
+  }
+  .greeting-text-container {
+    margin-top: 1rem;
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 796px) {
+  .landing-page {
+    background-image: url(./assets/doom-bar-tablet.jpg);
+  }
+}
+@media screen and (max-width: 635px) {
+  .greeting-title {
+    font-size: 3rem;
+  }
+  .greeting-subtitle {
+    font-size: 2.5rem;
+  }
+  .greeting-msg {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 483px) {
+  .landing-page {
+    background-image: url(./assets/doom-bar-mobile.jpg);
+  }
+  .greeting-title {
+    font-size: 2.5rem;
+  }
+  .greeting-subtitle {
+    font-size: 2rem;
+  }
+  .greeting-msg {
+    font-size: 1.5rem;
+  }
 }
