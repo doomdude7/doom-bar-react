@@ -15,6 +15,7 @@
   z-index: 18;
 }
 .search-item-title {
+  text-align: center;
   font-size: 1.5rem;
   font-weight: bold;
   color: white;
@@ -33,5 +34,10 @@
 @media screen and (max-width: 464px) {
   .search-item {
     width: 40vw;
+  }
+}
+@media screen and (max-height: 490px) {
+  .search-item {
+    height: auto;
   }
 }
