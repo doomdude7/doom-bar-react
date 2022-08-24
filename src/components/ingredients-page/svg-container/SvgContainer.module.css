@@ -44,3 +44,19 @@
     transform: scale(0.5);
   }
 }
+@media screen and (max-width: 626px) {
+  .svg-container {
+    left: 20%;
+    top: 12%;
+    transform: scale(0.4);
+    background-color: aqua;
+  }
+}
+@media screen and (max-width: 426px) {
+  .svg-container {
+    left: 0;
+    top: 12%;
+    transform: scale(0.4);
+    background-color: aqua;
+  }
+}
