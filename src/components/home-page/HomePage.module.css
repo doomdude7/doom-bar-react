@@ -20,7 +20,7 @@
 }
 .greeting-text-container {
   text-align: center;
-  padding: 5rem;
+
   display: flex;
   flex-direction: column;
 }
@@ -55,13 +55,19 @@
   background-size: cover;
   background-position: center;
 }
+@media screen and (max-width: 1218px) {
+  .greeting-title {
+    font-size: 3.5rem;
+  }
+}
 @media screen and (max-width: 1135px) {
   .greeting {
+    height: auto;
     flex-direction: column-reverse;
   }
   .greeting img {
     margin-bottom: 2.5rem;
-    height: 80vh;
+    height: 30vh;
     width: 50vw;
   }
   .greeting-text-container {
