@@ -238,6 +238,9 @@ header nav a {
     width: 22rem;
     transform: translate(-10%, 0%);
   }
+  .logo {
+    transform: translateX(-45%);
+  }
   .nav-option {
     font-size: 1.2rem;
     width: 7rem;
