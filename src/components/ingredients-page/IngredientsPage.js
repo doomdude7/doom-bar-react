@@ -14,6 +14,7 @@ export const IngredientsPage = () => {
   const { baseId } = useParams();
   useEffect(() => {
     console.log("idBase", baseId);
+
     getSelection(baseId).then((data) => {
       setCocktailSelection(data);
     });
@@ -71,6 +72,7 @@ export const IngredientsPage = () => {
               {!baseProps.props &&
                 baseProps.map((base) => (
                   <Link
+                    style={{ textDecoration: "none" }}
                     to={{ pathname: `/pick-drink/${base.baseName}` }}
                     key={base.baseImg}
                   >

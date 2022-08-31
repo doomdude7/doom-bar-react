@@ -8,7 +8,10 @@ export const RandomCocktail = ({ cocktail, detailsClick }) => {
   }, [cocktail]);
 
   return (
-    <Link to={{ pathname: `/cocktails/${cocktail.idDrink}` }}>
+    <Link
+      style={{ textDecoration: "none" }}
+      to={{ pathname: `/cocktails/${cocktail.idDrink}` }}
+    >
       <div className={`${styles["random-cocktail"]}`}>
         <h2
           className={`${styles["random-cocktail-title"]}`}
