@@ -1,8 +1,9 @@
 import styles from "./CocktailDetails.module.css";
 import global from "../../App.module.css";
+import { gsap } from "gsap";
 import { CocktailDetailsIngredients } from "./CocktailDetailsIngredients";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { getById } from "../../services/cocktailFetchService";
 
 export const CocktailDetails = ({ closeClick, favourited }) => {
@@ -27,31 +28,110 @@ export const CocktailDetails = ({ closeClick, favourited }) => {
     favourited(cocktail.idDrink);
   };
   console.log(favourited, "favourited");
+
+  //gsap animations
+  const comp = useRef();
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(
+        "#cocktail-preview-img",
+        { opacity: 0, scale: 0.1, x: -500, y: -500 },
+        {
+          opacity: 1,
+          scale: 0.5,
+          x: 0,
+          y: 0,
+          duration: 1.5,
+          ease: "Power1.easeOut",
+        }
+      );
+      gsap.fromTo(
+        ".cocktails-details-title",
+        { opacity: 0, x: -800 },
+        { opacity: 1, x: 0, duration: 2, ease: "elastic.out(0.6, 0.3)" }
+      );
+      gsap.fromTo(
+        ".cocktails-details-category",
+        { opacity: 0, x: 800 },
+        { opacity: 1, x: 0, duration: 1.5 },
+        "<"
+      );
+      gsap.fromTo(
+        ".cocktails-details-alcoholic",
+        { opacity: 0, y: -800 },
+        { opacity: 1, y: 0, duration: 1.5, delay: 0.4 },
+        "<"
+      );
+      gsap.fromTo(
+        ".glass-type",
+        { opacity: 0, y: 0 },
+        { y: -200, opacity: 1, duration: 2 }
+      );
+      gsap.fromTo(
+        ".heart-cocktail-details",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 2,
+          delay: 0.5,
+        },
+        "<"
+      );
+      gsap.fromTo(
+        ".close-cocktail-details",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 2,
+        },
+        "<"
+      );
+    }, comp);
+    return () => ctx.revert();
+  }, []);
+
   return (
     <div className={styles["details-overlay"]}>
       <section
+        ref={comp}
         className={`${styles["cocktail-details-page"]} ${global["content"]}`}
       >
         <button
-          className={`${styles["close-cocktail-details"]}`}
+          className={`${styles["close-cocktail-details"]} ${[
+            "close-cocktail-details",
+          ]}`}
           onClick={closeDetailsHandler}
         >
           X
         </button>
         <button
-          className={`${styles["heart-cocktail-details"]}`}
+          className={`${styles["heart-cocktail-details"]} ${[
+            "heart-cocktail-details",
+          ]}`}
           onClick={heartClickHandler}
         >
           ❤
         </button>
         <div className={`${styles["cocktail-details"]}`}>
           <h1
-            className={`${styles["cocktails-details-title"]}`}
+            className={`${styles["cocktails-details-title"]} ${[
+              "cocktails-details-title",
+            ]}`}
           >{`${cocktail.strDrink}`}</h1>
           <h3
-            className={`${styles["cocktails-details-category"]}`}
+            className={`${styles["cocktails-details-category"]} ${[
+              "cocktails-details-category",
+            ]}`}
           >{`${cocktail.strCategory}`}</h3>
-          <h3 className={`${styles["cocktails-details-alcoholic"]}`}>
+          <h3
+            className={`${styles["cocktails-details-alcoholic"]} ${[
+              "cocktails-details-alcoholic",
+            ]}`}
+          >
             {`${cocktail.strAlcoholic}`}
           </h3>
         </div>
@@ -64,7 +144,7 @@ export const CocktailDetails = ({ closeClick, favourited }) => {
               src={`${cocktail.strDrinkThumb}`}
               alt="cocktail pic"
             />
-            <h2 className={`${styles["glass-type"]}`}>
+            <h2 className={`${styles["glass-type"]} ${["glass-type"]}`}>
               Served in a {`${cocktail.strGlass}`}
             </h2>
           </div>

@@ -1,4 +1,6 @@
 import styles from "./CocktailDetailsIngredients.module.css";
+import { gsap } from "gsap";
+import { useRef, useLayoutEffect } from "react";
 export const CocktailDetailsIngredients = ({ cocktail }) => {
   console.log("cocktail", cocktail);
   const measures = Object.keys(cocktail).filter((key) =>
@@ -73,19 +75,62 @@ export const CocktailDetailsIngredients = ({ cocktail }) => {
   console.log("ingredients", ingredients);
   //   console.log("IngredientsItems", ingredientsItems);
   //   console.log("cocktail strMeasure", `cocktail.strMeasure${index}`);
+
+  //gsap animations
+  const comp = useRef();
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".ingredients-list-title",
+        { opacity: 0, scale: 0.2 },
+        { opacity: 1, scale: 1, duration: 1.5 }
+      );
+      gsap.fromTo(
+        ".ingredients-list",
+        { opacity: 0 },
+        { opacity: 1, duration: 2 },
+        "<80%"
+      );
+      gsap.fromTo(
+        ".instructions-p-title",
+        { opacity: 0, scale: 0.2 },
+        { opacity: 1, scale: 1, duration: 1.5 }
+      );
+      gsap.fromTo(
+        ".instructions-p",
+        { opacity: 0 },
+        { opacity: 1, duration: 2 },
+        "<120%"
+      );
+    }, comp);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className={`${styles["cocktail-instructions"]}`}>
-      <h2 className={`${styles["ingredients-list-title"]}`}>Ingredients:</h2>
-      <ul className={`${styles["ingredients-list"]}`}>{ingredientsItems}</ul>
+    <div ref={comp} className={`${styles["cocktail-instructions"]}`}>
+      <h2
+        className={`${styles["ingredients-list-title"]} ${[
+          "ingredients-list-title",
+        ]}`}
+      >
+        Ingredients:
+      </h2>
+      <ul className={`${styles["ingredients-list"]} ${["ingredients-list"]}`}>
+        {ingredientsItems}
+      </ul>
 
       {cocktail.strInstructions !== "" &&
         cocktail.strInstructions !== null &&
         cocktail.strInstructions !== "\n" && (
           <>
-            <h2 className={`${styles["instructions-p-title"]}`}>
+            <h2
+              className={`${styles["instructions-p-title"]} ${[
+                "instructions-p-title",
+              ]}`}
+            >
               Instructions:
             </h2>
-            <p className={`${styles["instructions-p"]}`}>
+            <p className={`${styles["instructions-p"]} ${["instructions-p"]}`}>
               {cocktail.strInstructions}
             </p>
           </>
