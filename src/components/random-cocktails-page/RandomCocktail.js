@@ -1,5 +1,6 @@
 import styles from "./RandomCocktail.module.css";
-import { useEffect } from "react";
+import { gsap } from "gsap";
+import { useEffect, useRef, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 export const RandomCocktail = ({ cocktail, detailsClick }) => {
   console.log(cocktail.cocktail);
@@ -7,21 +8,52 @@ export const RandomCocktail = ({ cocktail, detailsClick }) => {
     console.log("cocktail", cocktail);
   }, [cocktail]);
 
+  //gsap animations
+  const comp = useRef();
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".random-cocktail-img",
+        { y: -250, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1, stagger: 0.35, delay: 0.38 },
+        "<"
+      );
+      gsap.fromTo(
+        ".random-cocktail-title",
+        { x: -200, opacity: 0 },
+        { x: 0, opacity: 1, stagger: 0.35, delay: 0.2 },
+        "<"
+      );
+      gsap.fromTo(
+        ".random-cocktail-category",
+        { opacity: 0 },
+        { opacity: 1, stagger: 0.35, delay: 0.5 },
+        "<"
+      );
+    }, comp);
+    return () => ctx.revert();
+  }, []);
   return (
     <Link
       style={{ textDecoration: "none" }}
       to={{ pathname: `/cocktails/${cocktail.idDrink}` }}
     >
-      <div className={`${styles["random-cocktail"]}`}>
+      <div className={`${styles["random-cocktail"]}`} ref={comp}>
         <h2
-          className={`${styles["random-cocktail-title"]}`}
+          className={`${styles["random-cocktail-title"]} ${[
+            "random-cocktail-title",
+          ]}`}
         >{`${cocktail.strDrink}`}</h2>
         <h3
-          className={`${styles["random-cocktail-category"]}`}
+          className={`${styles["random-cocktail-category"]} ${[
+            "random-cocktail-category",
+          ]}`}
         >{`${cocktail.strCategory}`}</h3>
         <img
           id={`${cocktail.idDrink}`}
-          className={`${styles["random-cocktail-img"]}`}
+          className={`${styles["random-cocktail-img"]} ${[
+            "random-cocktail-img",
+          ]}`}
           src={`${cocktail.strDrinkThumb}`}
           alt="cocktail pic"
         />
