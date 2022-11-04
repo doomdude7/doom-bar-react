@@ -62,11 +62,11 @@ export const CocktailDetails = ({ closeClick, favourited }) => {
         { opacity: 1, y: 0, duration: 1.5, delay: 0.4 },
         "<"
       );
-      gsap.fromTo(
-        ".glass-type",
-        { opacity: 0, y: 0 },
-        { y: -200, opacity: 1, duration: 2 }
-      );
+      // gsap.fromTo(
+      //   ".glass-type",
+      //   { opacity: 0, y: 0 },
+      //   { y: -200, opacity: 1, duration: 2 }
+      // );
       gsap.fromTo(
         ".heart-cocktail-details",
         {
@@ -94,6 +94,29 @@ export const CocktailDetails = ({ closeClick, favourited }) => {
     return () => ctx.revert();
   }, []);
 
+  let mm = gsap.matchMedia();
+  mm.add("(min-width: 800px)", () => {
+    gsap.fromTo(
+      ".glass-type",
+      { opacity: 0, y: 0 },
+      { y: -200, opacity: 1, duration: 2 }
+    );
+    return () => {
+      // optional
+      // custom cleanup code here (runs when it STOPS matching)
+    };
+  });
+  mm.add("(max-width: 800px)", () => {
+    gsap.fromTo(
+      ".glass-type",
+      { opacity: 0, y: 200 },
+      { y: 0, opacity: 1, duration: 2 }
+    );
+    return () => {
+      // optional
+      // custom cleanup code here (runs when it STOPS matching)
+    };
+  });
   return (
     <div className={styles["details-overlay"]}>
       <section
