@@ -27,7 +27,7 @@ export const RandomCocktail = ({ cocktail, detailsClick }) => {
       gsap.fromTo(
         ".random-cocktail-category",
         { opacity: 0 },
-        { opacity: 1, stagger: 0.35, delay: 0.5 },
+        { opacity: 1, stagger: 0.35, delay: 0.1 },
         "<"
       );
     }, comp);
