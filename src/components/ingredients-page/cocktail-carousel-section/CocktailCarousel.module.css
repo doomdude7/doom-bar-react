@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .cocktail-carousel-item-img {
   width: 25vw;
   border-radius: 20rem;

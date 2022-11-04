@@ -16,7 +16,7 @@
   font-size: 2rem;
   color: whitesmoke;
 
-  transform: translate(0, 100%);
+  transform: translate(0, 500%);
   -webkit-text-stroke: 0.5px #893ca3;
   text-shadow: 2px 2px 2px #893ca3, 3px 3px 3px #3a1845, 10px 10px 15px black;
 }

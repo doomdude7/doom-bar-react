@@ -72,7 +72,7 @@ export const Header = () => {
             <div className={styles["auth-buttons-container"]}>
               <Link to="/login">
                 <button
-                  id="cursor-trigger-btn"
+                  id="profile-btn-login"
                   className={`${styles["auth-button"]}`}
                 >
                   Login
@@ -80,7 +80,7 @@ export const Header = () => {
               </Link>
               <Link to="/register">
                 <button
-                  id="cursor-trigger-btn"
+                  id="profile-btn-reg"
                   className={`${styles["auth-button"]}`}
                 >
                   Register
@@ -91,10 +91,7 @@ export const Header = () => {
           {currentUser && (
             <div className={styles["auth-buttons-container"]}>
               <Link to="/profile">
-                <button
-                  id="cursor-trigger-btn"
-                  className={`${styles["auth-button"]}`}
-                >
+                <button id="profile-btn" className={`${styles["auth-button"]}`}>
                   My Profile
                 </button>
               </Link>
