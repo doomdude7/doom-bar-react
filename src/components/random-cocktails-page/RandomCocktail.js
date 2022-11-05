@@ -15,19 +15,19 @@ export const RandomCocktail = ({ cocktail, detailsClick }) => {
       gsap.fromTo(
         ".random-cocktail-img",
         { y: -250, opacity: 0 },
-        { y: 0, opacity: 1, duration: 1, stagger: 0.35, delay: 0.38 },
+        { y: 0, opacity: 1, duration: 0.5, delay: 0.42 },
         "<"
       );
       gsap.fromTo(
         ".random-cocktail-title",
         { x: -200, opacity: 0 },
-        { x: 0, opacity: 1, stagger: 0.35, delay: 0.2 },
+        { x: 0, opacity: 1, delay: 0.2, duration: 1 },
         "<"
       );
       gsap.fromTo(
         ".random-cocktail-category",
         { opacity: 0 },
-        { opacity: 1, stagger: 0.35, delay: 0.1 },
+        { opacity: 1, delay: 0.2, duration: 2.5 },
         "<"
       );
     }, comp);
