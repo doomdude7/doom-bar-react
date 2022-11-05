@@ -49,6 +49,7 @@ footer img {
     flex-wrap: wrap;
     height: 20rem;
     bottom: auto;
+    background-color: #2f1736;
   }
   .logo-container {
     display: flex;
