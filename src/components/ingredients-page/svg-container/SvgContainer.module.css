@@ -14,11 +14,14 @@
 .base {
   position: absolute;
   transform: scale(0.8) Translate(0%, 0%);
+  overflow: visible;
   /* filter: hue-rotate(40deg) saturate(0.5) brightness(120%) saturate(4); */
 }
 .head {
   position: absolute;
   transform: scale(0.8) Translate(415%, 36%);
+  overflow: visible;
+
   /* filter: hue-rotate(40deg) saturate(0.5) brightness(120%) saturate(4); */
 }
 .lemon {
@@ -28,6 +31,7 @@
 .umbrella {
   position: absolute;
   transform: scale(0.8) Translate(570%, 185%);
+  overflow: visible;
 }
 @media screen and (max-width: 1246px) {
   .svg-container {

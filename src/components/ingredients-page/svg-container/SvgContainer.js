@@ -1,12 +1,68 @@
 import styles from "./SvgContainer.module.css";
+import React from "react";
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 export const SvgContainer = ({ svgClick }) => {
   const svgClickHandler = () => {
     console.log("svgClicked");
     svgClick(true);
   };
+
+  //gsap animations
+  const comp = useRef();
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(
+        "#base",
+        {
+          opacity: 0,
+          x: -5000,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1,
+          delay: 1,
+          ease: "elastic.out(0.8, 0.4)",
+        }
+      );
+      gsap.fromTo(
+        "#head",
+        {
+          y: -7000,
+        },
+        { y: 0, rotate: "360", duration: 1, delay: 0.5, ease: "power2.out" },
+        "<"
+      );
+      gsap.fromTo(
+        "#lemon",
+        {
+          opacity: 0,
+        },
+        { opacity: 1, duration: 1.5, delay: 1, ease: "power2.out" },
+        "<"
+      );
+      gsap.fromTo(
+        "#umbrella",
+        {
+          opacity: 0,
+          x: 1000,
+          y: -1000,
+        },
+        { x: 0, y: 0, opacity: 1, duration: 1.5, delay: 1, ease: "power2.out" },
+        "<"
+      );
+    }, comp);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className={styles["svg-container"]} onClick={svgClickHandler}>
+    <div
+      ref={comp}
+      className={styles["svg-container"]}
+      onClick={svgClickHandler}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"

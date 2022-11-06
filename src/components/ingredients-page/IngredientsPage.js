@@ -5,8 +5,10 @@ import { BaseImg } from "./pick-base-section/BaseImg";
 import { SvgContainer } from "./svg-container/SvgContainer";
 import { CocktailCarousel } from "./cocktail-carousel-section/CocktailCarousel";
 import React from "react";
+import { useRef } from "react";
+import { gsap } from "gsap";
 import { useNavigate, Link, useParams } from "react-router-dom";
-import { LoadingSpinner } from "../common/loading-spinner/LoadingSpinner";
+// import { LoadingSpinner } from "../common/loading-spinner/LoadingSpinner";
 
 export const IngredientsPage = () => {
   const [baseProps, setBaseProps] = useState([]);
@@ -14,20 +16,21 @@ export const IngredientsPage = () => {
   const navigate = useNavigate();
 
   const { baseId } = useParams();
-  const [spinner, setSpinner] = useState(false);
+  // const [spinner, setSpinner] = useState(false);
 
   useEffect(() => {
     console.log("idBase", baseId);
-    setSpinner(true);
+    // setSpinner(true);
 
     getSelection(baseId).then((data) => {
       setCocktailSelection(data);
-      setSpinner(false);
+      // setSpinner(false);
     });
   }, [baseId]);
 
   const selectHandler = (data) => {
-    setSpinner(false);
+    // setSpinner(false);
+
     navigate(`/pick-drink/${data}`);
   };
   useEffect(() => {
@@ -46,7 +49,7 @@ export const IngredientsPage = () => {
     bases.map((base) => {
       // console.log("this is base", base);
       return getBases(base).then((data) => {
-        setSpinner(false);
+        // setSpinner(false);
         setBaseProps((prevState) => [
           ...prevState,
           { baseImg: data, baseName: base },
@@ -64,51 +67,72 @@ export const IngredientsPage = () => {
     console.log("detailsClick", data);
     navigate(`/cocktails/${data}`);
   };
-  useEffect(() => {
-    console.log("spinner", spinner);
-  }, [spinner]);
+  // useEffect(() => {
+  //   console.log("spinner", spinner);
+  // }, [spinner]);
 
+  //gsap animations
+  const comp = useRef();
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.fromTo(
+        ".ingredients-container-title",
+        {
+          opacity: 0,
+          scale: 0.5,
+          color: "#2f1736",
+        },
+        { opacity: 1, color: "white", scale: 1, duration: 2, delay: 0.5 }
+      );
+    }, comp);
+    return () => ctx.revert();
+  }, [baseProps]);
   return (
     <>
-      {spinner && <LoadingSpinner />}
+      {/* {spinner && <LoadingSpinner />} */}
       <section
         id="content ingredients-page"
         className={styles["ingredients-page"]}
       >
-        {!spinner && (
-          <>
-            <div className={styles["ingredients-page-top-part"]}>
-              <SvgContainer svgClick={svgHandler} />
-              <div className={styles["ingredients-container"]}>
-                <h2 className={styles["ingredients-container-title"]}>
-                  Pick your base:
-                </h2>
+        {/* {!spinner && ( */}
+        <>
+          <div className={styles["ingredients-page-top-part"]}>
+            <SvgContainer svgClick={svgHandler} />
+            <div ref={comp} className={styles["ingredients-container"]}>
+              <h2
+                id="ingredients-container-title"
+                className={`${styles["ingredients-container-title"]} ${[
+                  "ingredients-container-title",
+                ]}`}
+              >
+                Pick your base:
+              </h2>
 
-                <div className={styles["bases"]}>
-                  {!baseProps.props &&
-                    baseProps.map((base) => (
-                      <Link
-                        style={{ textDecoration: "none" }}
-                        to={{ pathname: `/pick-drink/${base.baseName}` }}
+              <div className={styles["bases"]}>
+                {!baseProps.props &&
+                  baseProps.map((base) => (
+                    <Link
+                      style={{ textDecoration: "none" }}
+                      to={{ pathname: `/pick-drink/${base.baseName}` }}
+                      key={base.baseImg}
+                    >
+                      <BaseImg
                         key={base.baseImg}
-                      >
-                        <BaseImg
-                          key={base.baseImg}
-                          baseProp={base}
-                          selectedBase={selectHandler}
-                        />
-                      </Link>
-                    ))}
-                </div>
+                        baseProp={base}
+                        selectedBase={selectHandler}
+                      />
+                    </Link>
+                  ))}
               </div>
             </div>
-            <div className={styles["ingredients-page-bottom-part"]}>
-              <div className={styles["cocktail-list"]}>
-                <CocktailCarousel cocktailSelection={cocktailSelection} />
-              </div>
+          </div>
+          <div className={styles["ingredients-page-bottom-part"]}>
+            <div className={styles["cocktail-list"]}>
+              <CocktailCarousel cocktailSelection={cocktailSelection} />
             </div>
-          </>
-        )}
+          </div>
+        </>
+        {/* )} */}
       </section>
     </>
   );
