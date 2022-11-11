@@ -39,20 +39,17 @@ export const RandomCocktailsPage = ({
   }, []);
 
   //gsap animations
-  const comp = useRef(); // create a ref for the root level element (for scoping)
+  const comp = useRef();
   useLayoutEffect(() => {
-    // create our context. This function is invoked immediately and all GSAP animations and ScrollTriggers created during the execution of this function get recorded so we can revert() them later (cleanup)
     let ctx = gsap.context(() => {
-      // all our animations can use selector text like ".box"
-      // and it's properly scoped to our component
       gsap.fromTo(
         ".cocktail-page-title",
         { y: -1000, opacity: 0 },
         { y: 0, opacity: 1, duration: 1.8, ease: "power2.out" }
       );
-    }, comp); // <- IMPORTANT! Scopes selector text
-    return () => ctx.revert(); // cleanup
-  }, []); // <- empty dependency Array so it doesn't re-run on every render
+    }, comp);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <>

@@ -2,7 +2,7 @@ import styles from "./RandomCocktail.module.css";
 import { gsap } from "gsap";
 import { useEffect, useRef, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
-export const RandomCocktail = ({ cocktail, detailsClick }) => {
+export const RandomCocktail = ({ cocktail }) => {
   console.log(cocktail.cocktail);
   useEffect(() => {
     console.log("cocktail", cocktail);

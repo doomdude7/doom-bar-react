@@ -9,15 +9,12 @@
   font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  position: absolute;
-  top: 20%;
 }
 .profile-section-email {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  position: absolute;
-  top: 32%;
+  text-align: center;
 }
 .profile-button {
   width: 8rem;
@@ -34,4 +31,18 @@
 }
 .profile-button-label {
   margin-top: 5rem;
+}
+.disclaimer {
+  font-size: 3rem;
+  text-decoration: underline;
+  text-decoration-color: #3a1845;
+  text-align: center;
+}
+@media screen and (max-width: 765px) {
+  .profile-section-label {
+    transform: translateY(60%);
+  }
+  .profile-section-email {
+    transform: translateY(100%);
+  }
 }

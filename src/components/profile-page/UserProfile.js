@@ -56,6 +56,9 @@ export const UserProfile = ({ sessionFavs }) => {
           >
             Log Out
           </button>
+          <h1 className={styles["disclaimer"]}>
+            *this page is still under construction*
+          </h1>
         </section>
       )}
     </>
