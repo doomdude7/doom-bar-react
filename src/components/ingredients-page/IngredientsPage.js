@@ -21,7 +21,7 @@ export const IngredientsPage = () => {
   useEffect(() => {
     console.log("idBase", baseId);
     // setSpinner(true);
-
+    if(!baseId) return;
     getSelection(baseId).then((data) => {
       setCocktailSelection(data);
       // setSpinner(false);
